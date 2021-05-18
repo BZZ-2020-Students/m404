@@ -9,14 +9,30 @@ public class Auto {
     private double kraftstoffmenge;
     private String kennzeichen;
 
+    private double verbrauch100km;
+
+    public Auto(int leistung, String farbe, String marke, String modell, double kraftstoffmenge, String kennzeichen, double verbrauch100km) {
+        this.leistung = leistung;
+        this.farbe = farbe;
+        this.marke = marke;
+        this.modell = modell;
+        this.kraftstoffmenge = kraftstoffmenge;
+        this.kennzeichen = kennzeichen;
+        this.verbrauch100km = verbrauch100km;
+    }
+
+    public void ausgeben(){
+        System.out.println("Marke: "+ marke+"\nModell: "+ modell + "\nLeistung: "+ leistung + "\nFarbe: "+farbe+ "\nKraftstoffmenge: " + kraftstoffmenge + "\nKennzeichen: " + kennzeichen);
+    }
+
     public void fahren(){
-        System.out.println("Sie fahren mit ihrem Auto 100 km, Sie haben 10 L verbraucht");
-        kraftstoffmenge -= 10;
+        System.out.println("Sie fahren mit ihrem " + modell +" 100 km, Sie haben 10 L verbraucht");
+        kraftstoffmenge -= verbrauch100km;
     }
 
     public void tanken(){
-        System.out.println("Sie tanken ihr Auto, Sie haben 10 L getankt");
-        kraftstoffmenge += 10;
+        System.out.println("Sie tanken ihren " + modell + "mit 10 l auf");
+        kraftstoffmenge += verbrauch100km;
     }
 
     public int getLeistung() {
@@ -65,5 +81,12 @@ public class Auto {
 
     public void setModell(String modell) {
         this.modell = modell;
+    }
+    public double getVerbrauch100km() {
+        return verbrauch100km;
+    }
+
+    public void setVerbrauch100km(double verbrauch100km) {
+        this.verbrauch100km = verbrauch100km;
     }
 }

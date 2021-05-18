@@ -29,8 +29,8 @@ public class NumberGuesser {
                 System.out.print("Enter a number between " + minGuess + " and " + maxGuess + " > ");
                 guess = sc.nextInt();
 
-                minGuess = (guess > minGuess && guess < secret) ? guess : minGuess;
-                maxGuess = (guess < maxGuess && guess > secret) ? guess : maxGuess;
+                minGuess = (guess > minGuess && guess < secret) ? guess + 1 : minGuess;
+                maxGuess = (guess < maxGuess && guess > secret) ? guess - 1 : maxGuess;
 
                 if (guess > MAXNUMBER || guess < MINNUMBER)
                     System.out.println("Are you even trying!? This number isn't even in the range!");

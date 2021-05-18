@@ -16,7 +16,7 @@ public class Garage {
         }
 
         /**
-         * starts the execution änderung
+         * starts the execution zweite änderung
          *
          * @param args
          *            command line arguments

@@ -1,0 +1,10 @@
+Erstellen Sie eine Klasse Auto
+
+Das Auto hat folgende Eigenschaften: Leistung, Farbe, Marke, Kraftstoffmenge, Kennzeichen
+Erstellen Sie getter und setter für alle Attribute.
+Das Auto kann fahren() (dann wird die Kraftstoffmenge weniger)
+Das Auto kann tanken() (dann wird die Kraftstoffmenge grösser)
+
+Erstellen Sie eine Klasse Autogarage aus dem Template.
+Erstellen Sie in der run()-Methode fünf Autos.
+Lassen Sie die Autos fahren() und tanken()

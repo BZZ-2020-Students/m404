@@ -39,29 +39,33 @@ public class GuessNumber{
      * description
      */
     private void run() {
-        Integer secret = (int)(Math.random() * 100 + 1);
         int tries = 0;
         int userInput = 0;
+        int minNumber = 1;
+        int maxNumber = 100;
+        Integer secret = (int)(Math.random() * maxNumber + minNumber);
         System.out.println("Hallo versuche die geheime Zahl zu erraten!");
         boolean foundNumber = false;
 
         while(!foundNumber) {
-            System.out.print("Dein Versuch (1 - 100) > ");
+            System.out.print("Dein Versuch (" + minNumber + " - " + maxNumber +") > ");
             userInput = scanner.nextInt();
             tries++;
 
             int result = compareTo(userInput, secret);
             switch (result) {
-                case 0:
+                case 0 -> {
                     System.out.println("Gratuliere!");
                     foundNumber = true;
-                    break;
-                case 1:
+                }
+                case 1 -> {
+                    maxNumber = userInput - 1;
                     System.out.println("Die gesuchte Zahl ist kleiner!");
-                    break;
-                case -1:
+                }
+                case -1 -> {
+                    minNumber = userInput + 1;
                     System.out.println("Die gesuchte Zahl ist grösser!");
-                    break;
+                }
             }
         }
         System.out.println("Nach " + tries + " Versuchen haben Sie die Zahl gefunden!");

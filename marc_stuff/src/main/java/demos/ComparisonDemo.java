@@ -39,7 +39,6 @@ public class ComparisonDemo {
         } else {
             System.out.println("nr1 & nr2 = not equal");
         }
-
         if (nr1.equals(nr2)) {
             System.out.println("nr1 & nr2 = equal");
         } else {

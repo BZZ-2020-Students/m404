@@ -4,16 +4,14 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class NumberGuesser {
-    private Scanner sc;
-    private Integer secret;
-    private static final int MINNUMBER = 69;
-    private static final int MAXNUMBER = 420;
-    private int minGuess = MINNUMBER;
-    private int maxGuess = MAXNUMBER;
+    private final Scanner sc;
+    private final Integer secret;
+    private int minNumber = 1;
+    private int maxNumber = 100;
 
     public NumberGuesser() {
         sc = new Scanner(System.in);
-        secret = (int)(Math.random() * MAXNUMBER + MINNUMBER);
+        secret = (int)(Math.random() * maxNumber + minNumber);
     }
 
     public static void main(String[] args) {
@@ -26,13 +24,13 @@ public class NumberGuesser {
 
         while (!guessed) {
             try {
-                System.out.print("Enter a number between " + minGuess + " and " + maxGuess + " > ");
+                System.out.print("Enter a number between " + minNumber + " and " + maxNumber + " > ");
                 guess = sc.nextInt();
 
-                minGuess = (guess > minGuess && guess < secret) ? guess + 1 : minGuess;
-                maxGuess = (guess < maxGuess && guess > secret) ? guess - 1 : maxGuess;
+                minNumber = (guess > minNumber && guess < secret) ? guess + 1 : minNumber;
+                maxNumber = (guess < maxNumber && guess > secret) ? guess - 1 : maxNumber;
 
-                if (guess > MAXNUMBER || guess < MINNUMBER)
+                if (guess > maxNumber || guess < minNumber)
                     System.out.println("Are you even trying!? This number isn't even in the range!");
                 else if (guess < secret)
                     System.out.println("The secret number is greater than: " + guess);

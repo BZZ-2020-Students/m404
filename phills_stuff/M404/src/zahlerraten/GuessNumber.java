@@ -39,9 +39,10 @@ public class GuessNumber{
      * description
      */
     private void run() {
-        int anzVersuche = 1;
-        int maxZahl = 100;
-        int minZahl = 1;
+        Integer anzVersuche = new Integer(1);
+        Integer maxZahl = new Integer(100);
+        Integer minZahl = new Integer(1);
+        Integer eingabe;
        System.out.println("Hallo, versuche die geheime Zahl zu erraten");
         /*System.out.println("Geben Sie die min Zahl ein: ");
         minZahl = scanner.nextInt();
@@ -51,10 +52,10 @@ public class GuessNumber{
         */
         System.out.println("Versuch Nr: " + anzVersuche);
         System.out.println("Eingabe zwischen (" + minZahl + " - " + maxZahl + ") :");
-        int eingabe = scanner.nextInt();
+        eingabe = scanner.nextInt();
         Integer zufallZahl = secret;
-        while(zufallZahl != eingabe) {
-           if(zufallZahl > eingabe){
+        while(zufallZahl.intValue() != eingabe.intValue()) {
+           if(zufallZahl.intValue() > eingabe.intValue()){
                System.out.println("Gesuchte Zahl ist grösser!");
                minZahl = eingabe;
 

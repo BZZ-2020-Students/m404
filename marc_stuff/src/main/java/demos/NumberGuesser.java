@@ -6,10 +6,12 @@ import java.util.Scanner;
 public class NumberGuesser {
     private Scanner sc;
     private Integer secret;
+    private static final int MINNUMBER = 69;
+    private static final int MAXNUMBER = 420;
 
     public NumberGuesser() {
         sc = new Scanner(System.in);
-        secret = (int)(Math.random() * 100 + 1);
+        secret = (int)(Math.random() * MAXNUMBER + MINNUMBER);
     }
 
     public static void main(String[] args) {
@@ -22,10 +24,12 @@ public class NumberGuesser {
 
         while (!guessed) {
             try {
-                System.out.print("Enter a number between 1 and 100 > ");
+                System.out.print("Enter a number between " + MINNUMBER + " and " + MAXNUMBER + " > ");
                 guess = sc.nextInt();
 
-                if (guess < secret)
+                if (guess > MAXNUMBER || guess < MINNUMBER)
+                    System.out.println("Are you even trying!? This number isn't even in the range!");
+                else if (guess < secret)
                     System.out.println("The secret number is greater than: " + guess);
                 else if (guess > secret)
                     System.out.println("The secret number is less than: " + guess);

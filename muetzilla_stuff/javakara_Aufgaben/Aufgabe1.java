@@ -10,10 +10,8 @@ import javakara.JavaKaraProgram;
  */
 public class Aufgabe1 extends JavaKaraProgram {
 
-  // hier können Sie eigene Methoden definieren
-
   public void myProgram() {
-    // hier kommt das Hauptprogramm hin, zB:
+
     int anzahl = 0;
     while(!kara.treeFront()) {
       kara.move();

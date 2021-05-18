@@ -11,6 +11,7 @@ import javakara.JavaKaraProgram;
 public class Aufgabe3 extends JavaKaraProgram {
 
   public void myProgram() {
+      //Als Plan der Welt wird der des Moodles verwendet.
     //Verlassen des Gebäudes
     kara.turnLeft();
     kara.move();

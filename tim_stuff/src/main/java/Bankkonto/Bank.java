@@ -1,8 +1,10 @@
 package Bankkonto;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Bank {
+    Scanner scanner = new Scanner(System.in);
     public Bank() {
         run();
     }
@@ -34,10 +36,33 @@ public class Bank {
             System.out.println(konto.toString());
             System.out.println("\n");
         }
+
+        boolean exit = false;
+        while(!exit) {
+            System.out.println("Welches Konto möchtest du dir ansehen? ");
+            for(Konto konto : konten) {
+                System.out.println("(" + konto.getId() + ") " + konto.getKontoBesitzer().getVorname() + " " + konto.getKontoBesitzer().getNachname());
+            }
+            System.out.print("Deine Eingabe > ");
+            String input = scanner.nextLine();
+            Integer targetBankaccount = getIntFromString(input);
+            while(targetBankaccount == null) {
+                System.out.print("Bitte eine der angegebenen Zahlen eingeben! > ");
+            }
+        }
     }
 
     private int getRandomIndex(int arrayLength) {
         Random r = new Random();
         return r.nextInt(arrayLength);
+    }
+
+    public Integer getIntFromString(String s) {
+        try {
+            return Integer.parseInt(s);
+        } catch (NumberFormatException e) {
+            System.out.println("Error! Can't convert String to int!");
+            return null;
+        }
     }
 }

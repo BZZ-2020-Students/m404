@@ -1,7 +1,5 @@
 package Bankkonto;
 
-import java.util.Date;
-
 public class Kunde {
     String vorname, nachname;
     int alter, id;

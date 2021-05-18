@@ -8,6 +8,8 @@ public class NumberGuesser {
     private Integer secret;
     private static final int MINNUMBER = 69;
     private static final int MAXNUMBER = 420;
+    private int minGuess = MINNUMBER;
+    private int maxGuess = MAXNUMBER;
 
     public NumberGuesser() {
         sc = new Scanner(System.in);
@@ -24,8 +26,11 @@ public class NumberGuesser {
 
         while (!guessed) {
             try {
-                System.out.print("Enter a number between " + MINNUMBER + " and " + MAXNUMBER + " > ");
+                System.out.print("Enter a number between " + minGuess + " and " + maxGuess + " > ");
                 guess = sc.nextInt();
+
+                minGuess = (guess > minGuess && guess < secret) ? guess : minGuess;
+                maxGuess = (guess < maxGuess && guess > secret) ? guess : maxGuess;
 
                 if (guess > MAXNUMBER || guess < MINNUMBER)
                     System.out.println("Are you even trying!? This number isn't even in the range!");

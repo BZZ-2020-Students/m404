@@ -2,13 +2,19 @@ package Bankkonto;
 
 public class Konto {
     int id;
-    double amountMoney;
+    long amountMoney;
     Kunde kontoBesitzer;
 
-    public Konto(int id, double amountMoney, Kunde kontoBesitzer) {
+    public Konto(int id, long amountMoney, Kunde kontoBesitzer) {
         this.id = id;
         this.amountMoney = amountMoney;
         this.kontoBesitzer = kontoBesitzer;
+    }
+
+    public String toString() {
+        return "ID: " + id + "\n" +
+                "Amount Money: " + amountMoney + "\n" +
+                "Kunde:\n" + kontoBesitzer.toString();
     }
 
     public boolean abheben(double amount) {
@@ -37,11 +43,11 @@ public class Konto {
         return id;
     }
 
-    public double getAmountMoney() {
+    public long getAmountMoney() {
         return amountMoney;
     }
 
-    public void setAmountMoney(double amountMoney) {
+    public void setAmountMoney(long amountMoney) {
         this.amountMoney = amountMoney;
     }
 

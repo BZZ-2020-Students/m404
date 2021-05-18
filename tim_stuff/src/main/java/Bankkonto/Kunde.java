@@ -13,6 +13,12 @@ public class Kunde {
         this.alter = alter;
     }
 
+    public String toString() {
+        return "ID: " + id + "\n"
+                + "Name: " + vorname + " " + nachname + "\n" +
+                "Alter: " + alter;
+    }
+
     public String getVorname() {
         return vorname;
     }

@@ -15,34 +15,19 @@ public class Auto {
         this.kennzeichen = kennzeichen;
     }
 
-    public void fahren(int howOftenOutput) {
-        int counter = 0;
+    public void fahren() {
+        // Der durchschnittliche Kraftstoffverbrauch liegt bei 7.8 Liter Benzin pro 100 Kilometer (src: https://de.statista.com/statistik/daten/studie/484054/umfrage/durchschnittsverbrauch-pkw-in-privaten-haushalten-in-deutschland/#:~:text=Der%20durchschnittliche%20Kraftstoffverbrauch%20von%20Personenkraftwagen,Kraftstoff%20f%C3%BCr%20die%20gleiche%20Strecke.
+        // Bei der Berechnung gehen wir von diesem Wert aus
         System.out.println("Auto " + id + " ist jetzt am fahren!");
-        while(currentKraftstoff > 0) {
-            currentKraftstoff -= 0.5;
-            counter++;
-
-            if(counter == howOftenOutput) {
-                System.out.println("jetziger Kraftstoff: " + currentKraftstoff);
-                counter = 0;
-            }
-        }
-        System.out.println("Auto " + id + " leer gefahren!");
+        double gefahreneKilometer = currentKraftstoff / 7.8 * 100;
+        currentKraftstoff = 0;
+        System.out.println("Auto " + id + " fuhr " + gefahreneKilometer + " Kilometer!");
     }
 
-    public void tanken(int howOftenOutput) {
-        int counter = 0;
+    public void tanken() {
         System.out.println("Auto " + id + " geht jetzt tanken!");
-        while(currentKraftstoff < maxKraftstoffmenge) {
-            currentKraftstoff += 0.5;
-            counter++;
-
-            if(counter == howOftenOutput) {
-                System.out.println("jetziger Kraftstoff: " + currentKraftstoff);
-                counter = 0;
-            }
-        }
-        System.out.println("Auto " + id + " voll getankt!");
+        double zuTankendeMenge = maxKraftstoffmenge - currentKraftstoff;
+        System.out.println("Auto " + id + " hat " + zuTankendeMenge + " Liter Kraftstoff getankt und ist wieder voll");
     }
 
     public String toString() {

@@ -52,8 +52,8 @@ public class AutoGarage {
 
         for(Auto car : autos) {
             System.out.println(car.toString());
-            car.fahren(10);
-            car.tanken(10);
+            car.fahren();
+            car.tanken();
 
             System.out.println("\n");
         }

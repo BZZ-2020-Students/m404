@@ -37,8 +37,23 @@ public class Briefanrede {
      * description
      */
     private void run() {
-        String eingabe = new String();
+        String anrede;
+        String nachname = null;
+        String firmenname;
 
-        System.out.println("");
+        System.out.println("Gebem Sie ihre Anrede ein: ");
+        anrede = scanner.nextLine();
+        if(anrede.equals("Herr") || anrede.equals("Frau")){
+            System.out.println("Geben Sie ihren Nachnamen ein: ");
+            nachname = scanner.nextLine();
+        }else{
+            System.out.println("Geben Sie ihren Firmennamen ein: ");
+            firmenname = scanner.nextLine();
+        }
+
+
+        System.out.println("Sehr geehrte Frau " + nachname);
+        System.out.println("Sehr geehrter Herr " + nachname);
+        System.out.println("Sehr geehrte Frauen und Herren");
     }
 }

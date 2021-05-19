@@ -17,11 +17,18 @@ public class Konto {
     }
 
     public void einzahlen(double betrag){
+
+
         kontostand += betrag;
     }
 
     public void abheben(double betrag){
-        kontostand -= betrag;
+        double mindestwert = kontostand -= betrag;
+        if(mindestwert <= 0){
+            System.out.println("Sie können nicht soviel abheben weil Sie broke sind:)");
+        }else {
+            kontostand -= betrag;
+        }
     }
 
     public String getBesitzer() {

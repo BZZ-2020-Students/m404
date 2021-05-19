@@ -22,17 +22,25 @@ public class Auto {
     }
 
     public void ausgeben(){
-        System.out.println("Marke: "+ marke+"\nModell: "+ modell + "\nLeistung: "+ leistung + "\nFarbe: "+farbe+ "\nKraftstoffmenge: " + kraftstoffmenge + "\nKennzeichen: " + kennzeichen);
+        System.out.println("Marke: "+ marke+"\nModell: "+ modell + "\nLeistung: "+ leistung + "\nVerbrauch auf 100km: "+ verbrauch100km +"\nFarbe: "+farbe+ "\nKraftstoffmenge: " + kraftstoffmenge + "\nKennzeichen: " + kennzeichen);
     }
 
     public void fahren(){
-        System.out.println("Sie fahren mit ihrem " + modell +" 100 km, Sie haben 10 L verbraucht");
-        kraftstoffmenge -= verbrauch100km;
+
+
+        double restkraftstoffmenge = kraftstoffmenge -= verbrauch100km;
+        if(restkraftstoffmenge <= 0){
+            System.out.println("Ihr Fahrzeug hat einen Leeren Tank Sie können nicht weiterfahren");
+
+        }else {
+            System.out.println("Sie fahren mit ihrem " + modell +" 100 km, Sie haben 10 L verbraucht");
+            kraftstoffmenge -= verbrauch100km;
+        }
     }
 
     public void tanken(){
-        System.out.println("Sie tanken ihren " + modell + "mit 10 l auf");
-        kraftstoffmenge += verbrauch100km;
+        System.out.println("Sie betanken ihren " + modell + " mit 10 l");
+        kraftstoffmenge += 10;
     }
 
     public int getLeistung() {

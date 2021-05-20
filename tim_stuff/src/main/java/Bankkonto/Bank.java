@@ -39,16 +39,40 @@ public class Bank {
 
         boolean exit = false;
         while(!exit) {
-            System.out.println("Welches Konto möchtest du dir ansehen? ");
-            for(Konto konto : konten) {
-                System.out.println("(" + konto.getId() + ") " + konto.getKontoBesitzer().getVorname() + " " + konto.getKontoBesitzer().getNachname());
+            boolean b = false;
+            int targetBankaccount = -1;
+            while(!b) {
+                System.out.println("\n\n\n");
+                System.out.println("Welches Konto möchtest du dir ansehen? ");
+                for (Konto konto : konten) {
+                    System.out.println("(" + konto.getId() + ") " + konto.getKontoBesitzer().getVorname() + " " + konto.getKontoBesitzer().getNachname());
+                }
+                System.out.println("Um das Programm zu beenden, schreibe \"exit\" oder \"close\"");
+                System.out.print("Deine Eingabe > ");
+                String input = scanner.nextLine();
+
+                try {
+                    targetBankaccount = Integer.parseInt(input);
+                    if(targetBankaccount > konten.length) {
+                        System.out.println("Deine Zahl kann nicht grösser als " + konten.length + " sein!");
+                    } else if(targetBankaccount < 1) {
+                        System.out.println("Deine Zahl kann nicht kleiner als " + 1 + " sein!");
+                    } else {
+                        targetBankaccount-=1;
+                        b = true;
+                    }
+                } catch (NumberFormatException e) {
+                    if(input.equals("exit") || input.equals("close")) {
+                        b=true;
+                        exit = true;
+                    } else {
+                        System.out.println("Bitte gebe eine Zahl ein!");
+                    }
+                }
             }
-            System.out.print("Deine Eingabe > ");
-            String input = scanner.nextLine();
-            Integer targetBankaccount = getIntFromString(input);
-            while(targetBankaccount == null) {
-                System.out.print("Bitte eine der angegebenen Zahlen eingeben! > ");
-            }
+
+            System.out.println("\n\n");
+            System.out.println(konten[targetBankaccount].toString());
         }
     }
 

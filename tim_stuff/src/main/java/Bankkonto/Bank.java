@@ -37,6 +37,8 @@ public class Bank {
             System.out.println("\n");
         }
 
+        // TODO: simulate a month for each konto and save this in the history.
+
         boolean exit = false;
         while(!exit) {
             boolean b = false;
@@ -73,6 +75,7 @@ public class Bank {
 
             System.out.println("\n\n");
             System.out.println(konten[targetBankaccount].toString());
+            // TODO: print out the history
         }
     }
 

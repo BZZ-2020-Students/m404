@@ -1,11 +1,13 @@
 package Bankkonto;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Konto {
     int id;
+    int transactionId = 0;
+    long moneyBeforeSimulation;
     long amountMoney;
+    boolean hasBeenSimulated = false;
     Kunde kontoBesitzer;
     ArrayList<Transaktion> transactionHistoryList = new ArrayList<>();
 
@@ -13,12 +15,20 @@ public class Konto {
         this.id = id;
         this.amountMoney = amountMoney;
         this.kontoBesitzer = kontoBesitzer;
+        moneyBeforeSimulation = amountMoney;
     }
 
     public String toString() {
-        return "ID: " + id + "\n" +
-                "Amount Money: " + amountMoney + "\n" +
-                "Kunde:\n" + kontoBesitzer.toString();
+        if(hasBeenSimulated) {
+            return "Konto ID: " + id + "\n" +
+                    "Amount Money before Sim: " + moneyBeforeSimulation + "\n" +
+                    "Amount Money after Sim: " + amountMoney + "\n" +
+                    kontoBesitzer.toString();
+        } else {
+            return "Konto ID: " + id + "\n" +
+                    "Amount Money" + amountMoney + "\n" +
+                    kontoBesitzer.toString();
+        }
     }
 
     public String[] transactionHistoryListToString() {
@@ -29,36 +39,26 @@ public class Konto {
         int counter = 1;
         for(Transaktion oneTransaction : transactionHistoryList) {
             historyToString[counter] = oneTransaction.toString();
+
             counter++;
         }
 
         return historyToString;
     }
 
-    public boolean abheben(double amount) {
-        if (amount > amountMoney) {
-            return false;
+    public void printTransactionHistory() {
+        System.out.println("Transaction History of Bankaccount " + id);
+        for(Transaktion oneTransaction : transactionHistoryList) {
+            System.out.println(oneTransaction.toString());
         }
-
-        amountMoney-=amount;
-        return true;
     }
 
-    public boolean zahlen(double amount) {
-        if (amount > amountMoney) {
-            return false;
-        }
-
-        amountMoney-=amount;
-        return true;
+    public void addTransaction(int id, Konto from, Konto to, Date when, long moneyBefore, long transferredMoney, TransaktionStatus state, TransaktionsTypen type) {
+        transactionHistoryList.add(new Transaktion(id, from, to, when, moneyBefore, transferredMoney, state, type));
     }
 
-    public void einzahlen(double amount) {
-        amountMoney+=amount;
-    }
-
-    private void addTransaction(int id, Konto from, Konto to, Date when, long amountMoney, TransaktionStatus state) {
-        transactionHistoryList.add(new Transaktion(id, from, to, when, amountMoney, state));
+    public void addTransaction(int id, Konto from, Date when, long moneyBefore, long transferredMoney, TransaktionStatus state, TransaktionsTypen type) {
+        transactionHistoryList.add(new Transaktion(id, from, when, moneyBefore, transferredMoney, state, type));
     }
 
     public int getId() {

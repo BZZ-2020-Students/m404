@@ -12,8 +12,8 @@ public class Kunde {
     }
 
     public String toString() {
-        return "ID: " + id + "\n"
-                + "Name: " + vorname + " " + nachname + "\n" +
+        return "Kunde ID: " + id + "\n" +
+                "Name: " + vorname + " " + nachname + "\n" +
                 "Alter: " + alter;
     }
 

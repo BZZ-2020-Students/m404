@@ -18,21 +18,24 @@ public class Bank {
     }
 
     private void run() {
-        Konto kontoPhillip = new Konto("CH-93 4788 4773 5788 9", getRandValue(10000000, false), "Phillip", "Jerebic", "Herr", false, "CHF");
-        Konto kontoMagnus = new Konto("CH-93 4788 4734 8456 1", getRandValue(10000000, false), "Magnus", "Götz", "Herr", false, "CHF");
-        Konto kontoTim = new Konto("CH-93 4788 4662 4378 6", getRandValue(10000000, false), "Tim", "Irmler", "Herr", false, "CHF");
-        Konto kontoMarc = new Konto("CH-93 4788 8364 2925 3", getRandValue(10000000, false), "Marc", "Fuchs", "Herr", false, "CHF");
-        Konto kontoLoic = new Konto("CH-93 4788 4734 8456 1", getRandValue(10000000, false), "Loic", "Flückiger", "Herr", false, "CHF");
-        Konto kontoAlyssa = new Konto("CH-93 4788 4734 8456 1", getRandValue(10000000, false), "Alyssa", "Heimlicher", "Frau", false, "CHF");
-        konten.add(kontoPhillip);
-        konten.add(kontoMagnus);
-        konten.add(kontoTim);
-        konten.add(kontoMarc);
-        konten.add(kontoLoic);
-        konten.add(kontoAlyssa);
+        Konto konto1 = new Konto("CH-93 4788 4773 5788 9", getRandValue(10000000, false), "Max", "Mustermann", "Herr", false, "CHF");
+        Konto konto2 = new Konto("CH-93 4788 4734 8456 1", getRandValue(10000000, false), "Marta", "Meier", "Frau", false, "CHF");
+        Konto konto3 = new Konto("CH-93 4788 4662 4378 6", getRandValue(10000000, false), "Heidi", "Schmied", "Frau", false, "CHF");
+        Konto konto4 = new Konto("CH-93 4788 8364 2925 3", getRandValue(10000000, false), "Heinz", "Muster", "Herr", false, "CHF");
+        Konto konto5 = new Konto("CH-93 4788 4734 8456 1", getRandValue(10000000, false), "Peter", "Becker", "Herr", false, "CHF");
+        Konto konto6 = new Konto("CH-93 4788 4734 8456 1", getRandValue(10000000, false), "Markus", "Maier", "Frau", false, "CHF");
+        konten.add(konto1);
+        konten.add(konto2);
+        konten.add(konto3);
+        konten.add(konto4);
+        konten.add(konto5);
+        konten.add(konto6);
 
         for (int i = 0; i < 30; i++) {
             ueberweisung(konten.get(getRandValue(5, true)), konten.get(getRandValue(5, true)), getRandValue(100000, false));
+        }
+        for (int i = 0; i < konten.size(); i++) {
+            System.out.println(konten.get(i).toString());
         }
     }
 
@@ -53,7 +56,9 @@ public class Bank {
 
     }
 
-    public ArrayList<Konto> getMostVermoegen(ArrayList<Konto> konten) {
+    /*public ArrayList<Konto> getMostVermoegen(ArrayList<Konto> konten) {
+
         konten.sort();
-    }
+        return konten;
+    }*/
 }

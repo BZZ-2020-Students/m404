@@ -3,14 +3,14 @@ package bankkonto;
 import java.util.ArrayList;
 
 public class Konto {
-    String iban;
-    double vermoegen;
-    String besVorname;
-    String besNachane;
-    String besAnrede;
-    boolean kontoUeberzogen;
-    String waehrung;
-    ArrayList<Double> history = new ArrayList<>();
+    private String iban;
+    private double vermoegen;
+    private String besVorname;
+    private String besNachane;
+    private String besAnrede;
+    private boolean kontoUeberzogen;
+    private String waehrung;
+    private ArrayList<Double> history = new ArrayList<>();
 
     public Konto() {
 

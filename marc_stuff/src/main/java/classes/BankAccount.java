@@ -9,11 +9,13 @@ public class BankAccount {
     private ArrayList<String> history = new ArrayList<>();
 
     public void deposit(long money) {
+        System.out.println(money / 100d + "CHF were deposited to " + ownerName);
         history.add("+" + money);
         this.money += money;
     }
 
     public void withdraw(long money) {
+        System.out.println(money / 100d + "CHF were withdrawn from " + ownerName);
         history.add("-" + money);
         this.money += money;
     }
@@ -54,5 +56,15 @@ public class BankAccount {
 
     public void setHistory(ArrayList<String> history) {
         this.history = history;
+    }
+
+    @Override
+    public String toString() {
+        return "BankAccount{" +
+                "money=" + money +
+                ", iban='" + iban + '\'' +
+                ", ownerName='" + ownerName + '\'' +
+                ", history=" + history +
+                '}';
     }
 }

@@ -1,7 +1,5 @@
 package Bankkonto;
 
-import java.util.Date;
-
 public class Kunde {
     String vorname, nachname;
     int alter, id;
@@ -11,6 +9,12 @@ public class Kunde {
         this.vorname = vorname;
         this.nachname = nachname;
         this.alter = alter;
+    }
+
+    public String toString() {
+        return "Kunde ID: " + id + "\n" +
+                "Name: " + vorname + " " + nachname + "\n" +
+                "Alter: " + alter;
     }
 
     public String getVorname() {

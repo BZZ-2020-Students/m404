@@ -29,12 +29,17 @@ public class Rechner {
         System.out.println("Wie möchten Sie Rechnen? [+|-|*|/]");
 
         operator = einlesen.readString();
-        System.out.println(operator);
+        boolean falscheeingabe = false;
+        do{
+            if (operator.equals("+") || operator.equals("-") || operator.equals("*") || operator.equals("/")) {
 
-        while(!operator.equals("+") || !operator.equals("-") || !operator.equals("*") || !operator.equals("/")){
-            System.out.println("Geben Sie einen der oben gewählten Operatoren: ");
-            operator = einlesen.readString();
-        }
+                falscheeingabe = false;
+            }else{
+                System.out.println("Geben Sie einen der oben gewählten Operatoren: ");
+                operator = einlesen.readString();
+                falscheeingabe = true;
+            }
+        }while(falscheeingabe);
 
         System.out.println("Geben Sie die erste Zahl ein: ");
         zahl1 = einlesen.readDouble();

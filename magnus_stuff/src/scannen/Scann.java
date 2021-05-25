@@ -8,10 +8,6 @@ public class Scann {
     public Scann(){
         scanner = new Scanner(System.in);
     }
-
-    public String readString(){
-        return scanner.nextLine();
-    }
     public double readDouble() {
         while (!scanner.hasNextDouble()){
             System.out.println("Bitte gib eine Zahl ein!");

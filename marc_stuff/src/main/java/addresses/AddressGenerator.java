@@ -1,4 +1,4 @@
-package demos;
+package addresses;
 
 import java.util.Scanner;
 

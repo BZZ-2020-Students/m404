@@ -1,6 +1,4 @@
-package demos;
-
-import classes.BankAccount;
+package bank;
 
 public class BankDemo {
     public static void main(String[] args) {

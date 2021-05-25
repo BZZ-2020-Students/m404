@@ -10,6 +10,10 @@ public class Einleser {
         scanner = new Scanner(System.in);
     }
 
+    public String readString() {
+        return scanner.nextLine();
+    }
+
     public double readDouble() {
         while(!scanner.hasNextDouble()) {
             System.out.println("Bitte eine Zahl eingeben!");

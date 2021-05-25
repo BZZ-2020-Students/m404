@@ -7,39 +7,38 @@ public class Schueler {
     String geburtsdatum;
     String geschlecht;
 
-    public void addFach(Fach fach){
-        if(faecher != null){
+    public void addFach(Fach fach) {
+        if (faecher != null) {
             Fach[] newfacher = new Fach[faecher.length + 1];
-            for(int i = 0; i < faecher.length; i++){
+            for (int i = 0; i < faecher.length; i++) {
                 newfacher[i] = faecher[i];
             }
             newfacher[faecher.length] = fach;
             this.faecher = newfacher;
-        }else {
+        } else {
             faecher = new Fach[]{fach};
         }
 
     }
 
-    public Fach getFach(String name){
+    public Fach getFach(String name) {
         Fach fach = null;
-        for(int i = 0; i < faecher.length; i++){
-            if(faecher[i].getName().equalsIgnoreCase(name)){
+        for (int i = 0; i < faecher.length; i++) {
+            if (faecher[i].getName().equalsIgnoreCase(name)) {
                 fach = faecher[i];
             }
         }
         return fach;
     }
 
-    public void printFaecher(){
-        System.out.println("Alle Fächer von " + vorname +" "+ name + ": ");
-        for(int i = 0; i < faecher.length; i++){
-            System.out.println(faecher[i].getName() + " "+ faecher[i].getSchuljahr() + " "+ faecher[i].getSemester() + " Semester: " + faecher[i].printNoteString());
+    public void printFaecher() {
+        System.out.println("\nAlle Fächer von " + vorname + " " + name + ": ");
+        for (int i = 0; i < faecher.length; i++) {
+            System.out.println(faecher[i].getName() + " " + faecher[i].getSchuljahr() + " " + faecher[i].getSemester() + " Semester: " + faecher[i].printNoteString());
         }
     }
 
-    public Schueler(){
-
+    public Schueler() {
     }
 
     public Schueler(String name, String vorname, String geburtsdatum, String geschlecht) {

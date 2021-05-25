@@ -3,7 +3,7 @@ package notenverwaltung;
 import java.util.Date;
 
 public class Schueler {
-    private Fach[] faecher = new Fach[6];
+    private Fach[] faecher = new Fach[2];
     private String name;
     private String vorname;
     private String gelschecht;

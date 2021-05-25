@@ -42,21 +42,24 @@ public class Bank {
         Konto konten[] = {kont1,kont2};
 
 
+        for (int y = 0; y < 5; y++) {
 
-        for (int i = 0; i < 2; i++) {
-            int kunde = 1;
-            kunde += i;
 
-            System.out.println("Kunde " + kunde + ":");
-            System.out.println("Wie viel möchten Sie abheben? ");
-            abhebebetrag = scanner.nextDouble();
-            System.out.println("Wie viel möchten Sie einzahlen? ");
-            einzahlbetrag = scanner.nextDouble();
-            System.out.println();
-            konten[i].abheben(abhebebetrag);
-            konten[i].einzahlen(einzahlbetrag);
-            konten[i].ausgeben();
-            System.out.println();
+            for (int i = 0; i < 2; i++) {
+                int kunde = 1;
+                kunde += i;
+
+                System.out.println("Kunde " + kunde + ":");
+                System.out.println("Wie viel möchten Sie abheben? ");
+                abhebebetrag = scanner.nextDouble();
+                System.out.println("Wie viel möchten Sie einzahlen? ");
+                einzahlbetrag = scanner.nextDouble();
+                System.out.println();
+                konten[i].abheben(abhebebetrag);
+                konten[i].einzahlen(einzahlbetrag);
+                konten[i].ausgeben();
+                System.out.println();
+            }
         }
     }
 }

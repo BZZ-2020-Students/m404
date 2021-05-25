@@ -55,17 +55,18 @@ public class Schule {
         do {
             System.out.print("Was möchten Sie tun?" +
                     "\n1.Alle Schüler anzeigen" +
-                    "\n2.Alle Fächer anzeigen" +
+                    "\n2.Alle Fächer eines Schülers anzeigen" +
                     "\n3.Den Durchschnitt eines Schülers in einem Fach anzeigen" +
                     "\n4.Einem Schüler eine Note hinzufügen" +
                     "\n5.Einem Schüler ein Fach hinzufügen" +
                     "\n6.Alle Schüler mit allen Fächern/Noten ausgeben" +
+                    "\n7.Einen Schüler hinzufügen" +
                     "\nGeben Sie die Zahl der Aktivität ein, welche Sie ausführen möchten >");
             input = scanner.scanInt();
         } while (input > 6 || input < 1);
         switch (input) {
             case 1 -> showSchueler();
-            case 2 -> showFaecher();
+            case 2 -> showFaecherOneSchueler();
             case 3 -> showAverage();
             case 4 -> addNote();
             case 5 -> addFach();
@@ -93,8 +94,11 @@ public class Schule {
 
     }
 
-    private void showFaecher() {
-
+    private void showFaecherOneSchueler() {
+        selectSchueler();
+        System.out.println("\n#######################################################\n" +
+                "Alle Fächer: \n");
+        System.out.println();
     }
 
     private void showSchueler() {
@@ -102,6 +106,23 @@ public class Schule {
                 "Alle Schüler: \n");
         for (int i = 0; i < schueler.length; i++) {
             System.out.println(schueler[i].toStringNoFaecher());
+        }
+    }
+
+    private int selectSchueler() {
+        System.out.println("\n#######################################################");
+        System.out.println("Wählen Sie den Schüler aus, von welchem Sie die Fächer sehen möchten: ");
+        showSchuelerJustName();
+        int input = 0;
+        do {
+            input = scanner.scanInt();
+        } while (input > schueler.length || input < 1);
+        return input;
+    }
+
+    private void showSchuelerJustName() {
+        for (int i = 0; i < schueler.length; i++) {
+            System.out.println(i + 1 + "." + schueler[i].getVorname() + " " + schueler[i].getName());
         }
     }
 }

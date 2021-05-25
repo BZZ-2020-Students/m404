@@ -29,4 +29,8 @@ public class Calculus {
     public double pow(double basis, double exponent) {
         return Math.pow(basis, exponent);
     }
+
+    public int modulo(double zahl1, double modulo) {
+        return (int) (zahl1 % modulo);
+    }
 }

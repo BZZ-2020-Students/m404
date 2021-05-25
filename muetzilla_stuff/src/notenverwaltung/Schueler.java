@@ -59,4 +59,17 @@ public class Schueler {
     public void setGebDatum(Date gebDatum) {
         this.gebDatum = gebDatum;
     }
+
+    public String printFacher() {
+        String printFeacher = "";
+        for (int i = 0; i < faecher.length; i++) {
+            printFeacher += faecher[i].toString() + "\n";
+        }
+        return printFeacher;
+    }
+
+    @Override
+    public String toString() {
+        return "Fächer: \n" + f
+    }
 }

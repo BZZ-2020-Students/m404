@@ -62,7 +62,9 @@ public class InputReader {
             System.out.println("Please enter a valid boolean!");
             sc.next();
         }
-        return sc.nextBoolean();
+        boolean out = sc.nextBoolean();
+        sc.nextLine();
+        return out;
     }
 
     public char readChar() {
@@ -81,5 +83,13 @@ public class InputReader {
             }
         }
         return out;
+    }
+
+    public String readString() {
+        while (!sc.hasNextLine()) {
+            System.out.println("Please enter a string!");
+            sc.next();
+        }
+        return sc.nextLine();
     }
 }

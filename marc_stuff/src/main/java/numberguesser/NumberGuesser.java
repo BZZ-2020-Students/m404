@@ -1,4 +1,4 @@
-package demos;
+package numberguesser;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

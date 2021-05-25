@@ -1,6 +1,5 @@
-package classes;
+package car;
 
-import java.awt.*;
 import java.util.Objects;
 
 public class Car {

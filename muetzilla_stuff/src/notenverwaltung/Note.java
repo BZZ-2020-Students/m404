@@ -43,6 +43,6 @@ public class Note {
 
     @Override
     public String toString() {
-        return "Note: " + wert + " Datum: " + datum + " Gewichtung" + gewichtung;
+        return "Note: " + wert + " Datum: " + datum + " Gewichtung: " + gewichtung;
     }
 }

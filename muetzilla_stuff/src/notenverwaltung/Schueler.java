@@ -3,7 +3,7 @@ package notenverwaltung;
 import java.util.Date;
 
 public class Schueler {
-    private Fach[] faecher = new Fach[2];
+    private Fach[] faecher;
     private String name;
     private String vorname;
     private String gelschecht;
@@ -64,12 +64,13 @@ public class Schueler {
         String printFeacher = "";
         for (int i = 0; i < faecher.length; i++) {
             printFeacher += faecher[i].toString() + "\n";
+            faecher[i].calculateAverageNote();
         }
         return printFeacher;
     }
 
     @Override
     public String toString() {
-        return "Fächer: \n" + f
+        return "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nVorname: " + vorname + "\nNachname: " + name + "\nGeschlecht: " + gelschecht + "\nGeburtsdatum: " + gebDatum + "\nFächer: \n" + printFacher();
     }
 }

@@ -10,7 +10,12 @@ public class Scan {
     }
 
     public int scanInt() {
-        int input = scanner.nextInt();
+        int input = 0;
+        while (!scanner.hasNextInt()) {
+            scanner.next();
+            System.out.print("Bitte einen gültigen Wert eingeben > ");
+        }
+        input = scanner.nextInt();
         return input;
     }
 
@@ -41,13 +46,22 @@ public class Scan {
     }
 
     public double scannNextDouble() {
-        double input = scanner.nextDouble();
+        double input = 0;
+        while (!scanner.hasNextDouble()) {
+            scanner.next();
+            System.out.print("Bitte einen gültigen Wert eingeben > ");
+        }
+        input = scanner.nextDouble();
         return input;
     }
 
     public float scannNextFloat() {
-        float input = scanner.nextFloat();
-
+        float input = 0;
+        while (!scanner.hasNextFloat()) {
+            scanner.next();
+            System.out.print("Bitte einen gültigen Wert eingeben > ");
+        }
+        input = scanner.nextFloat();
         return input;
     }
 }

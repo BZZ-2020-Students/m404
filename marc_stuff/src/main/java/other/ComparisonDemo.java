@@ -1,4 +1,4 @@
-package demos;
+package other;
 
 /**
  * practice using reference variables

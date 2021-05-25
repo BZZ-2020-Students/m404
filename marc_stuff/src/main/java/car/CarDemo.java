@@ -1,6 +1,4 @@
-package demos;
-
-import classes.Car;
+package car;
 
 import java.util.ArrayList;
 

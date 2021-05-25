@@ -17,5 +17,6 @@ public class Schule {
     }
 
     public void run() {
+        Schueler s1 = new Schueler();
     }
 }

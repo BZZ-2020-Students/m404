@@ -26,15 +26,23 @@ public class Fach {
     }
 
     public void printNoten() {
-        double zwischenresultat = 0;
-        double durchschnitt = 0;
         for (int i = 0; i < noten.length; i++) {
             System.out.println("Note: "+noten[i].getWert() + "\nGewichtung: " + noten[i].getGewichtung() + "\nDatum: " + noten[i].getDatum());
-            double resultat = noten[i].getWert();
-            zwischenresultat += resultat;
         }
-        durchschnitt = zwischenresultat / noten.length;
-        System.out.println("Durchschnitt: "+durchschnitt);
+        durchschnitt();
+    }
+
+    public void durchschnitt(){
+        double zwischenresultat = 0;
+        double durchschnitt = 0;
+        double gewichtung = 0;
+        for (int i = 0; i < noten.length; i++) {
+            double resultat = noten[i].getWert()* noten[i].getGewichtung();
+            zwischenresultat += resultat;
+            gewichtung += noten[i].getGewichtung() * 2;
+        }
+        durchschnitt = zwischenresultat / gewichtung * 2 ;
+        System.out.println("Durchschnitt: "+ durchschnitt);
     }
 
     public void setNoten(Note[] noten) {

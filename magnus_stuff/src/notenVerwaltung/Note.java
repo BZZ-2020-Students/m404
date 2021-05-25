@@ -8,10 +8,8 @@ public class Note {
     private LocalDate datum;
     private double gewichtung;
 
-    public Note(){
-
+    public Note() {
     }
-
 
 
     public Note(double wert, LocalDate datum, double gewichtung) {

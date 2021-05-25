@@ -6,36 +6,36 @@ public class Fach {
     int semester;
     int Schuljahr;
 
-    public void addNote(Note note){
-        if(noten != null){
-            Note[]newNoten= new Note[noten.length + 1];
-            for(int i = 0; i < noten.length; i++){
+    public void addNote(Note note) {
+        if (noten != null) {
+            Note[] newNoten = new Note[noten.length + 1];
+            for (int i = 0; i < noten.length; i++) {
                 newNoten[i] = noten[i];
             }
             newNoten[noten.length] = note;
             this.noten = newNoten;
-        }else {
+        } else {
             noten = new Note[]{note};
         }
     }
 
-    public void printNote(){
-        System.out.println("Noten im Fach "+ name + ": ");
-        for(int i = 0; i < noten.length; i++){
-            System.out.println("Note: " + noten[i].getWert() + "\nDatum: " + noten[i].getDatum() + "\nGewichtung: "+ noten[i].getGewichtung() + "\n");
+    public void printNote() {
+        System.out.println("Noten im Fach " + name + ": ");
+        for (int i = 0; i < noten.length; i++) {
+            System.out.println("Note: " + noten[i].getWert() + "\nDatum: " + noten[i].getDatum() + "\nGewichtung: " + noten[i].getGewichtung() + "\n------");
         }
     }
 
-    public String printNoteString(){
+    public String printNoteString() {
         String str = "";
-        for(int i = 0; i < noten.length; i++){
-            str += "\nNote: " + noten[i].getWert() + "\nDatum: " + noten[i].getDatum() + "\nGewichtung: "+ noten[i].getGewichtung() + "\n";
+        for (int i = 0; i < noten.length; i++) {
+            str += "\nNote: " + noten[i].getWert() + "\nDatum: " + noten[i].getDatum() + "\nGewichtung: " + noten[i].getGewichtung() + "\n------";
         }
 
         return str;
     }
 
-    public Fach(){
+    public Fach() {
 
     }
 

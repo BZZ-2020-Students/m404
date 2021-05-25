@@ -73,4 +73,8 @@ public class Schueler {
     public String toString() {
         return "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nVorname: " + vorname + "\nNachname: " + name + "\nGeschlecht: " + gelschecht + "\nGeburtsdatum: " + gebDatum + "\nFächer: \n" + printFacher();
     }
+
+    public String toStringNoFaecher() {
+        return "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nVorname: " + vorname + "\nNachname: " + name + "\nGeschlecht: " + gelschecht + "\nGeburtsdatum: " + gebDatum;
+    }
 }

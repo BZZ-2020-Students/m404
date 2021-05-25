@@ -7,6 +7,7 @@ import java.util.Calendar;
 
 public class Schule {
     Scan scanner;
+    Schueler[] schueler = new Schueler[5];
 
     public Schule() {
         scanner = new Scan();
@@ -19,7 +20,6 @@ public class Schule {
     }
 
     public void run() {
-        Schueler[] schueler = new Schueler[5];
         String[] vorname = {"Max", "Marta", "Peter", "Heidi", "Markus"};
         String[] nachname = {"Mustermann", "Meier", "Schmied", "Muster", "Becker"};
         String[] faechernamen = {"Mathematik", "Geografie", "Politik", "Französisch", "Englisch", "Informatik", "Geschite", "Wirtschaft"};
@@ -64,30 +64,18 @@ public class Schule {
             input = scanner.scanInt();
         } while (input > 6 || input < 1);
         switch (input) {
-            case 1:
-                showSchueler();
-                break;
-            case 2:
-                showFaecher();
-                break;
-            case 3:
-                showAverage();
-                break;
-            case 4:
-                addNote();
-                break;
-            case 5:
-                addFach();
-                break;
-            case 6:
-                showAll();
-                break;
+            case 1 -> showSchueler();
+            case 2 -> showFaecher();
+            case 3 -> showAverage();
+            case 4 -> addNote();
+            case 5 -> addFach();
+            case 6 -> showAll();
         }
     }
 
-    private void showAll(Schueler[] schueler) {
-        System.out.println("#######################################################\n" +
-                "Alle Schüler: \n");
+    private void showAll() {
+        System.out.println("\n#######################################################\n" +
+                "Alle Eingaben: \n");
         for (int i = 0; i < schueler.length; i++) {
             System.out.println(schueler[i].toString());
         }
@@ -110,5 +98,10 @@ public class Schule {
     }
 
     private void showSchueler() {
+        System.out.println("\n#######################################################\n" +
+                "Alle Schüler: \n");
+        for (int i = 0; i < schueler.length; i++) {
+            System.out.println(schueler[i].toStringNoFaecher());
+        }
     }
 }

@@ -8,6 +8,10 @@ public class Schueler {
     private String geburtstag;
     private String geschlecht;
 
+    public Schueler(){
+
+    }
+
     public Schueler(Fach[] faecher, String name, String vorname, String geburtstag, String geschlecht) {
         this.faecher = faecher;
         this.name = name;
@@ -15,6 +19,25 @@ public class Schueler {
         this.geburtstag = geburtstag;
         this.geschlecht = geschlecht;
     }
+
+    public void addFach(Fach fach){
+
+    }
+
+    public void printFaecher(){
+        for (int i = 0; i < faecher.length; i++) {
+            System.out.println("-------------------------------------------------");
+            System.out.println("Fach: " + faecher[i].getName());
+            faecher[i].printNoten();
+        }
+
+
+
+    }
+
+//    public Fach getFach(String name){
+//        return Fach;
+//    }
 
     public Fach[] getFaecher() {
         return faecher;

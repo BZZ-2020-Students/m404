@@ -44,5 +44,18 @@ public class Fach {
     public void setSchuljahr(int schuljahr) {
         this.schuljahr = schuljahr;
     }
+
+    public String printNoten() {
+        String notenStr = "";
+        for (int i = 0; i < noten.length; i++) {
+            notenStr += noten[i].toString() + "\n";
+        }
+        return notenStr;
+    }
+
+    @Override
+    public String toString() {
+        return "******************************************************************\nFach: " + name + " Semseter: " + semester + " Schuljahr: " + schuljahr + " Noten: \n" + printNoten();
+    }
 }
 

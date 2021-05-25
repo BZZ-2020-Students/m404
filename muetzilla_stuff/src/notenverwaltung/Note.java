@@ -40,4 +40,9 @@ public class Note {
     public void setGewichtung(float gewichtung) {
         this.gewichtung = gewichtung;
     }
+
+    @Override
+    public String toString() {
+        return "Note: " + wert + " Datum: " + datum + " Gewichtung" + gewichtung;
+    }
 }

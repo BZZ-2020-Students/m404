@@ -1,6 +1,5 @@
 package notenVerwaltung;
 
-import java.time.DateTimeException;
 import java.time.LocalDate;
 
 public class Note {
@@ -10,8 +9,7 @@ public class Note {
 
     public Note() {
     }
-
-
+    
     public Note(double wert, LocalDate datum, double gewichtung) {
         this.wert = wert;
         this.datum = datum;

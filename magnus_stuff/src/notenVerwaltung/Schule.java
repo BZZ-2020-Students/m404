@@ -2,9 +2,9 @@ package notenVerwaltung;
 
 import java.time.LocalDate;
 
-public class Demo {
+public class Schule {
     public static void main(String[] args) {
-        new Demo().run();
+        new Schule().run();
     }
 
     public void run() {

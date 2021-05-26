@@ -73,5 +73,9 @@ public class Fach {
     public String toString() {
         return "******************************************************************\nFach: " + name + "\n=============================\nSemseter: " + semester + "\nSchuljahr: " + schuljahr + "\nNoten: \n" + printNoten() + "\nDurchschnitt: " + df.format(calculateAverageNote());
     }
+
+    public String toStringNameAndAverage() {
+        return "\nFach: " + name + "\n\tDurchschnitt: " + df.format(calculateAverageNote()) + "\n***************************************************";
+    }
 }
 

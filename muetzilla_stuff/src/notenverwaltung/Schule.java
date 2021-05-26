@@ -91,14 +91,20 @@ public class Schule {
     }
 
     private void showAverage() {
-
+        int schuelerIndex = selectSchueler();
+        Fach[] faecher = schueler[schuelerIndex - 1].getFaecher();
+        String averageFaecher = "";
+        for (int i = 0; i < faecher.length; i++) {
+            averageFaecher += faecher[i].toStringNameAndAverage();
+        }
+        System.out.println("\n#######################################################\n" +
+                "Durchschnitte von " + averageFaecher);
     }
 
     private void showFaecherOneSchueler() {
-        selectSchueler();
+        int schuelerIndex = selectSchueler();
         System.out.println("\n#######################################################\n" +
-                "Alle Fächer: \n");
-        System.out.println();
+                "Alle Fächer: \n" + schueler[schuelerIndex - 1].printFacher());
     }
 
     private void showSchueler() {
@@ -110,11 +116,12 @@ public class Schule {
     }
 
     private int selectSchueler() {
-        System.out.println("\n#######################################################");
-        System.out.println("Wählen Sie den Schüler aus, von welchem Sie die Fächer sehen möchten: ");
-        showSchuelerJustName();
-        int input = 0;
+        int input;
         do {
+            System.out.println("\n#######################################################");
+            System.out.println("Wählen Sie den Schüler aus, von welchem Sie die Fächer sehen möchten: ");
+            showSchuelerJustName();
+            System.out.print("Geben Sie die Nummer des gewünschten Schülers ein > ");
             input = scanner.scanInt();
         } while (input > schueler.length || input < 1);
         return input;

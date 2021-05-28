@@ -1,10 +1,14 @@
 package notenverwaltung;
 
+import java.text.DecimalFormat;
+
 public class Fach {
     private Note[] noten;
     private String name;
     private int semester;
     private int schuljahr;
+    private double averageNote;
+    private DecimalFormat df = new DecimalFormat("0.00");
 
     public Fach(Note[] noten, String name, int semester, int schuljahr) {
         this.noten = noten;
@@ -43,6 +47,35 @@ public class Fach {
 
     public void setSchuljahr(int schuljahr) {
         this.schuljahr = schuljahr;
+    }
+
+    public String printNoten() {
+        String notenStr = "";
+        for (int i = 0; i < noten.length; i++) {
+            notenStr += noten[i].toString() + "\n";
+        }
+        return notenStr;
+    }
+
+    public double calculateAverageNote() {
+        float total = 0;
+        float gewichtung = 0;
+        for (int i = 0; i < noten.length; i++) {
+            total += noten[i].getWert() * noten[i].getGewichtung();
+            gewichtung += noten[i].getGewichtung();
+        }
+        averageNote = total / gewichtung;
+        df.format(averageNote);
+        return averageNote;
+    }
+
+    @Override
+    public String toString() {
+        return "******************************************************************\nFach: " + name + "\n=============================\nSemseter: " + semester + "\nSchuljahr: " + schuljahr + "\nNoten: \n" + printNoten() + "\nDurchschnitt: " + df.format(calculateAverageNote());
+    }
+
+    public String toStringNameAndAverage() {
+        return "\nFach: " + name + "\n\tDurchschnitt: " + df.format(calculateAverageNote()) + "\n***************************************************";
     }
 }
 

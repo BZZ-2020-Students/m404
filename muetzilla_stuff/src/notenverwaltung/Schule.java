@@ -66,7 +66,7 @@ public class Schule {
         } while (input > 6 || input < 1);
         switch (input) {
             case 1 -> showSchueler();
-            case 2 -> showFaecherOneSchueler(selectSchueler());
+            case 2 -> showFaecherOneSchueler(selectSchueler(), true);
             case 3 -> showAverage();
             case 4 -> addNote();
             case 5 -> addFach();
@@ -111,17 +111,21 @@ public class Schule {
         do {
             System.out.println("\n#######################################################");
             System.out.println("Wählen Sie das Fach aus: ");
-            showFaecherOneSchueler(index);
+            showFaecherOneSchueler(index, false);
             System.out.print("Geben Sie die Nummer des gewünschten Faches ein > ");
             input = scanner.scanInt();
         } while (input > s.getFaecher().length || input < 1);
         return input;
-
     }
 
-    private void showFaecherOneSchueler(int schuelerIndex) {
-        System.out.println("\n#######################################################\n" +
-                "Alle Fächer: \n" + schueler[schuelerIndex - 1].printFacher());
+    private void showFaecherOneSchueler(int schuelerIndex, boolean alInfos) {
+        if (alInfos) {
+            System.out.println("\n#######################################################\n" +
+                    "Alle Fächer: \n" + schueler[schuelerIndex - 1].printFacher());
+        } else {
+            System.out.println("\n#######################################################\n" +
+                    "Alle Fächer: \n" + schueler[schuelerIndex - 1].printFaecherJustName());
+        }
     }
 
     private void showSchueler() {

@@ -69,6 +69,14 @@ public class Schueler {
         return printFeacher;
     }
 
+    public String printFaecherJustName() {
+        String printFeacherJustName = "";
+        for (int i = 0; i < faecher.length; i++) {
+            printFeacherJustName += faecher[i].toStringNameAndAverage() + "\n";
+        }
+        return printFeacherJustName;
+    }
+
     @Override
     public String toString() {
         return "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nVorname: " + vorname + "\nNachname: " + name + "\nGeschlecht: " + gelschecht + "\nGeburtsdatum: " + gebDatum + "\nFächer: \n" + printFacher();

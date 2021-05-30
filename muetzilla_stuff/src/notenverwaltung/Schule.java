@@ -4,7 +4,6 @@ package notenverwaltung;
 import scanner.Scan;
 
 import java.time.LocalDate;
-import java.util.Calendar;
 
 public class Schule {
     Scan scanner;
@@ -37,10 +36,13 @@ public class Schule {
             //  System.out.println(faecher[i].toString());
         }
         for (int i = 0; i < schueler.length; i++) {
-            schueler[i] = new Schueler(faecher, nachname[getRandValue(nachname.length, true)], vorname[getRandValue(vorname.length, true)], "M", Calendar.getInstance().getTime());
+            schueler[i] = new Schueler(faecher, nachname[getRandValue(nachname.length, true)], vorname[getRandValue(vorname.length, true)], "M", LocalDate.now());
             //  System.out.println(schueler[i].toString());
         }
-        userAuswahl();
+        int input;
+        do {
+            input = userAuswahl();
+        } while (input != 0);
     }
 
     public int getRandValue(int area, boolean incluedsNull) {
@@ -51,7 +53,7 @@ public class Schule {
         }
     }
 
-    public void userAuswahl() {
+    public int userAuswahl() {
         int input = 0;
         do {
             System.out.print("Was möchten Sie tun?" +
@@ -64,20 +66,43 @@ public class Schule {
                     "\n7.Einen Schüler hinzufügen" +
                     "\nGeben Sie die Zahl der Aktivität ein, welche Sie ausführen möchten (0 um das Programm zu beenden) >");
             input = scanner.scanInt();
-        } while (input > 6 || input < 1);
+        } while (input > 7 || input < 0);
         switch (input) {
             case 1 -> showSchueler();
             case 2 -> showFaecherOneSchueler(selectSchueler(), true);
             case 3 -> showAverage();
             case 4 -> addNoteToSchueler();
-            case 5 -> addFach();
+            case 5 -> addFachToSchueler();
             case 6 -> showAll();
             case 7 -> addSchueler();
         }
+        return input;
     }
 
     private void addSchueler() {
+        Schueler[] schuelerNew = new Schueler[schueler.length + 1];
+        for (int i = 0; i < schueler.length; i++) {
+            schuelerNew[i] = schueler[i];
+        }
+        schuelerNew[schuelerNew.length - 1] = addSchuelerInteraktion();
+        schueler = schuelerNew;
+    }
 
+    private Schueler addSchuelerInteraktion() {
+        String vNamen;
+        String nNamen;
+        String geschlecht;
+        LocalDate gebDate;
+        System.out.print("Bitte geben Sie den Vornamen des Schuelers ein > ");
+        vNamen = scanner.scanString();
+        System.out.print("Bitte geben Sie den Nachnamen des Schuelers ein > ");
+        nNamen = scanner.scanString();
+        System.out.print("Bitte geben Sie das Geschlecht des Schülers ein > ");
+        geschlecht = scanner.scanString();
+        System.out.println("Bitte geben Sie das Geburtsdatum des Schuelers ein: ");
+        gebDate = scanner.scanDate();
+        Fach[] f = {addFachToSchuelerInteraktion()};
+        return new Schueler(f, nNamen, vNamen, geschlecht, gebDate);
     }
 
     private void showAll() {
@@ -88,7 +113,7 @@ public class Schule {
         }
     }
 
-    private void addFach() {
+    private void addFachToSchueler() {
         showSchueler();
         int schuelerIndex = selectSchueler();
         Fach f = addFachToSchuelerInteraktion();

@@ -1,18 +1,18 @@
 package notenverwaltung;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Schueler {
     private Fach[] faecher;
     private String name;
     private String vorname;
     private String gelschecht;
-    private Date gebDatum;
+    private LocalDate gebDatum;
 
     public Schueler() {
     }
 
-    public Schueler(Fach[] faecher, String name, String vorname, String gelschecht, Date gebDatum) {
+    public Schueler(Fach[] faecher, String name, String vorname, String gelschecht, LocalDate gebDatum) {
         this.faecher = faecher;
         this.name = name;
         this.vorname = vorname;
@@ -52,11 +52,11 @@ public class Schueler {
         this.gelschecht = gelschecht;
     }
 
-    public Date getGebDatum() {
+    public LocalDate getGebDatum() {
         return gebDatum;
     }
 
-    public void setGebDatum(Date gebDatum) {
+    public void setGebDatum(LocalDate gebDatum) {
         this.gebDatum = gebDatum;
     }
 

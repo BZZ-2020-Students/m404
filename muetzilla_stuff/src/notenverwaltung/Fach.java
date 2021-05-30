@@ -75,6 +75,7 @@ public class Fach {
             notenNew[i] = noten[i];
         }
         notenNew[notenNew.length - 1] = n;
+        noten = notenNew;
     }
 
     @Override
@@ -83,7 +84,7 @@ public class Fach {
     }
 
     public String toStringNameAndAverage() {
-        return "\nFach: " + name + "\tDurchschnitt: " + df.format(calculateAverageNote());
+        return "Fach: " + name + "\tDurchschnitt: " + df.format(calculateAverageNote());
     }
 }
 

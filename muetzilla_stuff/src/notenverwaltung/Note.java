@@ -1,17 +1,17 @@
 package notenverwaltung;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Note {
 
     private float wert;
-    private Date datum;
+    private LocalDate datum;
     private float gewichtung;
 
     public Note() {
     }
 
-    public Note(float wert, Date datum, float gewichtung) {
+    public Note(float wert, LocalDate datum, float gewichtung) {
         this.wert = wert;
         this.datum = datum;
         this.gewichtung = gewichtung;
@@ -25,11 +25,11 @@ public class Note {
         this.wert = wert;
     }
 
-    public Date getDatum() {
+    public LocalDate getDatum() {
         return datum;
     }
 
-    public void setDatum(Date datum) {
+    public void setDatum(LocalDate datum) {
         this.datum = datum;
     }
 

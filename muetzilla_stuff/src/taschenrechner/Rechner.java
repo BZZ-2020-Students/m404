@@ -23,14 +23,14 @@ public class Rechner {
                 "\n**************************************");
         while (continueCalculations) {
             System.out.print("Geben Sie Ihre erste Zahl ein > ");
-            double firstInput = scanner.scannNextDouble();
+            double firstInput = scanner.scanNextDouble();
             System.out.print("Geben Sie Ihre Operationszeichen ein ( +,-,*,/,^,%,#(sqrt)) > ");
-            char operationszeichen = scanner.scannAnyChar();
+            char operationszeichen = scanner.scanAnyChar();
             if (operationszeichen == '#') {
                 result = calc.sqrt(firstInput);
             } else {
                 System.out.print("Geben Sie Ihre zweite Zahl ein > ");
-                secondInput = scanner.scannNextDouble();
+                secondInput = scanner.scanNextDouble();
                 result = operation(operationszeichen, firstInput, secondInput);
             }
             System.out.println("\nDas Resultat ist: " + result);
@@ -49,7 +49,7 @@ public class Rechner {
         } else if (operationszeichen == '/') {
             while (secondInput == 0) {
                 System.out.print("Division durch 0 ist nicht definiert! Bitte geben Sie erneut einen Wert ein > ");
-                secondInput = scanner.scannNextDouble();
+                secondInput = scanner.scanNextDouble();
             }
             return calc.divison(firstInput, secondInput);
 

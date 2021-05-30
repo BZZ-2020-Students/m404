@@ -69,10 +69,19 @@ public class Schueler {
         return printFeacher;
     }
 
+    public void addFach(Fach f) {
+        Fach[] faecherNew = new Fach[faecher.length + 1];
+        for (int i = 0; i < faecher.length; i++) {
+            faecherNew[i] = faecher[i];
+        }
+        faecherNew[faecherNew.length - 1] = f;
+        faecher = faecherNew;
+    }
+
     public String printFaecherJustName() {
         String printFeacherJustName = "";
         for (int i = 0; i < faecher.length; i++) {
-            printFeacherJustName += faecher[i].toStringNameAndAverage() + "\n";
+            printFeacherJustName += "\n" + (i + 1) + "." + faecher[i].toStringNameAndAverage();
         }
         return printFeacherJustName;
     }

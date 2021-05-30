@@ -3,6 +3,7 @@ package notenverwaltung;
 
 import scanner.Scan;
 
+import java.time.LocalDate;
 import java.util.Calendar;
 
 public class Schule {
@@ -25,11 +26,11 @@ public class Schule {
         String[] faechernamen = {"Mathematik", "Geografie", "Politik", "Französisch", "Englisch", "Informatik", "Geschite", "Wirtschaft"};
         Fach[] faecher = new Fach[6];
         Note[] noten = {
-                new Note(4.5f, Calendar.getInstance().getTime(), 1f),
-                new Note(5.5f, Calendar.getInstance().getTime(), 0.75f),
-                new Note(1.9f, Calendar.getInstance().getTime(), 0.5f),
-                new Note(4.3f, Calendar.getInstance().getTime(), 0.8f),
-                new Note(5.2f, Calendar.getInstance().getTime(), 0.25f)
+                new Note(4.5f, LocalDate.now(), 1f),
+                new Note(5.5f, LocalDate.now(), 0.75f),
+                new Note(1.9f, LocalDate.now(), 0.5f),
+                new Note(4.3f, LocalDate.now(), 0.8f),
+                new Note(5.2f, LocalDate.now(), 0.25f)
         };
         for (int i = 0; i < faecher.length; i++) {
             faecher[i] = new Fach(noten, faechernamen[i], getRandValue(2, false), getRandValue(4, false));
@@ -68,7 +69,7 @@ public class Schule {
             case 1 -> showSchueler();
             case 2 -> showFaecherOneSchueler(selectSchueler(), true);
             case 3 -> showAverage();
-            case 4 -> addNote();
+            case 4 -> addNoteToSchueler();
             case 5 -> addFach();
             case 6 -> showAll();
         }
@@ -86,12 +87,31 @@ public class Schule {
 
     }
 
-    private void addNote() {
+    private void addNoteToSchueler() {
         showSchueler();
         int schuelerIndex = selectSchueler();
         int fachIndex = selectFach(schuelerIndex);
+        Note n = addNoteToSchuelerInteraction();
+        schueler[schuelerIndex - 1].getFaecher()[fachIndex - 1].addNote(n);
+    }
 
-
+    private Note addNoteToSchuelerInteraction() {
+        float note;
+        float gewichtung;
+        LocalDate datumDerNote;
+        do {
+            System.out.print("Bitte geben Sie die Note ein > ");
+            note = scanner.scanNextFloat();
+        } while (note > 6 || note < 1);
+        System.out.print("Bitte geben sie die Gewichtung der Note als Dezimalzahl ein (100% -> 1) > ");
+        gewichtung = scanner.scanNextFloat();
+        //Wenn die Note als % Zahl eingegeben wurde, wird sie hier in eine Dezimalzahl umgewandelt.
+        if (gewichtung > 5) {
+            gewichtung /= 100;
+        }
+        System.out.println("Bitte geben Sie das Datum der Note ein: ");
+        datumDerNote = scanner.scanDate();
+        return new Note(note, datumDerNote, gewichtung);
     }
 
     private void showAverage() {

@@ -66,7 +66,7 @@ public class Schule {
         } while (input > 6 || input < 1);
         switch (input) {
             case 1 -> showSchueler();
-            case 2 -> showFaecherOneSchueler();
+            case 2 -> showFaecherOneSchueler(selectSchueler());
             case 3 -> showAverage();
             case 4 -> addNote();
             case 5 -> addFach();
@@ -87,6 +87,10 @@ public class Schule {
     }
 
     private void addNote() {
+        showSchueler();
+        int schuelerIndex = selectSchueler();
+        int fachIndex = selectFach(schuelerIndex);
+
 
     }
 
@@ -98,11 +102,24 @@ public class Schule {
             averageFaecher += faecher[i].toStringNameAndAverage();
         }
         System.out.println("\n#######################################################\n" +
-                "Durchschnitte von " + averageFaecher);
+                "Durchschnitte von " + schueler[schuelerIndex - 1].getVorname() + " " + schueler[schuelerIndex - 1].getName() + ": \n" + averageFaecher);
     }
 
-    private void showFaecherOneSchueler() {
-        int schuelerIndex = selectSchueler();
+    private int selectFach(int index) {
+        Schueler s = schueler[index];
+        int input;
+        do {
+            System.out.println("\n#######################################################");
+            System.out.println("Wählen Sie das Fach aus: ");
+            showFaecherOneSchueler(index);
+            System.out.print("Geben Sie die Nummer des gewünschten Faches ein > ");
+            input = scanner.scanInt();
+        } while (input > s.getFaecher().length || input < 1);
+        return input;
+
+    }
+
+    private void showFaecherOneSchueler(int schuelerIndex) {
         System.out.println("\n#######################################################\n" +
                 "Alle Fächer: \n" + schueler[schuelerIndex - 1].printFacher());
     }
@@ -119,7 +136,7 @@ public class Schule {
         int input;
         do {
             System.out.println("\n#######################################################");
-            System.out.println("Wählen Sie den Schüler aus, von welchem Sie die Fächer sehen möchten: ");
+            System.out.println("Wählen Sie den Schüler aus: ");
             showSchuelerJustName();
             System.out.print("Geben Sie die Nummer des gewünschten Schülers ein > ");
             input = scanner.scanInt();

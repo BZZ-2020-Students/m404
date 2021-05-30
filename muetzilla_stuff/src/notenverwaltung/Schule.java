@@ -62,7 +62,7 @@ public class Schule {
                     "\n5.Einem Schüler ein Fach hinzufügen" +
                     "\n6.Alle Schüler mit allen Fächern/Noten ausgeben" +
                     "\n7.Einen Schüler hinzufügen" +
-                    "\nGeben Sie die Zahl der Aktivität ein, welche Sie ausführen möchten >");
+                    "\nGeben Sie die Zahl der Aktivität ein, welche Sie ausführen möchten (0 um das Programm zu beenden) >");
             input = scanner.scanInt();
         } while (input > 6 || input < 1);
         switch (input) {
@@ -72,7 +72,12 @@ public class Schule {
             case 4 -> addNoteToSchueler();
             case 5 -> addFach();
             case 6 -> showAll();
+            case 7 -> addSchueler();
         }
+    }
+
+    private void addSchueler() {
+
     }
 
     private void showAll() {
@@ -84,7 +89,24 @@ public class Schule {
     }
 
     private void addFach() {
+        showSchueler();
+        int schuelerIndex = selectSchueler();
+        Fach f = addFachToSchuelerInteraktion();
+        schueler[schuelerIndex - 1].addFach(f);
+    }
 
+    private Fach addFachToSchuelerInteraktion() {
+        String fachName;
+        int schueljahr;
+        int semester;
+        System.out.print("Bitte geben Sie den Namen des Faches ein >");
+        fachName = scanner.scanString();
+        System.out.print("Bitte geben Sie das Schuljahr an, in welchem der Schuler dieses Fach hat > ");
+        schueljahr = scanner.scanInt();
+        System.out.print("Geben Sie bitte mit 1 oder 2 an, in welchem Semester der Schüler dieses Fach hat > ");
+        semester = scanner.scanInt();
+        Note n[] = {addNoteToSchuelerInteraction()};
+        return new Fach(n, fachName, semester, schueljahr);
     }
 
     private void addNoteToSchueler() {

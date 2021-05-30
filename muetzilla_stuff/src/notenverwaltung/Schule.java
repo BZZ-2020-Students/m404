@@ -55,6 +55,9 @@ public class Schule {
 
     public int userAuswahl() {
         int input = 0;
+        System.out.println("\n###################################################################\n" +
+                "\tHerzlich Wilkommen zum Notentool\n" +
+                "###################################################################\n");
         do {
             System.out.print("Was möchten Sie tun?" +
                     "\n1.Alle Schüler anzeigen" +

@@ -17,6 +17,7 @@ public class Scan {
             System.out.print("Bitte einen gültigen Wert eingeben > ");
         }
         input = scanner.nextInt();
+        scanner.nextLine();
         return input;
     }
 
@@ -53,6 +54,7 @@ public class Scan {
             System.out.print("Bitte einen gültigen Wert eingeben > ");
         }
         input = scanner.nextDouble();
+        scanner.nextLine();
         return input;
     }
 
@@ -63,6 +65,7 @@ public class Scan {
             System.out.print("Bitte einen gültigen Wert eingeben > ");
         }
         input = scanner.nextFloat();
+        scanner.nextLine();
         return input;
     }
 

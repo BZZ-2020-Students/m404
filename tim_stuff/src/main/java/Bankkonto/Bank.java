@@ -1,7 +1,5 @@
 package Bankkonto;
 
-import javax.swing.plaf.nimbus.State;
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 

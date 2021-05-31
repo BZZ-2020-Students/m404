@@ -35,7 +35,9 @@ public class Einleser {
             System.out.println("Bitte \"true\" oder \"false\" eingeben!");
             scanner.next();
         }
-        return scanner.nextBoolean();
+        boolean out = scanner.nextBoolean();
+        scanner.nextLine();
+        return out;
     }
 
     public char readChar() {

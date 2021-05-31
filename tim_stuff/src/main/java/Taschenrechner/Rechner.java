@@ -1,8 +1,6 @@
 package Taschenrechner;
 
-import Taschenrechner.Math.AbstractMath;
-import Taschenrechner.Math.Addition;
-import Taschenrechner.Math.Subtraction;
+import Taschenrechner.Math.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,8 +8,8 @@ import java.util.HashMap;
 public class Rechner {
     private HashMap<Character, AbstractMath> mathList = new HashMap();
     private final char[] validOperatoren = {'+','-'};
-    String mathString;
     Einleser scanner = new Einleser();
+    boolean debug = false;
 
     public Rechner() {
         run();
@@ -20,75 +18,78 @@ public class Rechner {
     public void run() {
         initAbstractMath();
 
-        System.out.println("Geben sie bitte ihre Rechnung ein: ");
-        mathInterpreter(scanner.readString());
-        //mathInterpreter("123+456+789");
+        System.out.print("Debug aktivieren? >");
+        debug = scanner.readBoolean();
+        System.out.print("Geben sie bitte ihre Rechnung ein > ");
+        System.out.println("Resultat = " + mathInterpreter(scanner.readString()));
+        //System.out.println(mathInterpreter("123+456-78.9+1111"));
     }
 
-    public void mathInterpreter(String _mathString) {
-        mathString = _mathString.replaceAll(" ", "");
+    public double mathInterpreter(String mathString) {
+        mathString = mathString.replaceAll(" ", "");
+        ArrayList<NumberPair> numberMathPairs = new ArrayList<>();
 
-        ArrayList<Character> allFoundOperatoren = new ArrayList<Character>();
-
-        for (int i = 0; i < mathString.length(); i++){
-            char c = mathString.charAt(i);
-            for(int j = 0; j < validOperatoren.length; j++) {
-                if(c == validOperatoren[j]) {
-                    allFoundOperatoren.add(c);
+        NumberPair currentNumberPair = new NumberPair();
+        int index = 0;
+        for(char c : mathString.toCharArray())  {
+            if(Character.isDigit(c) || c == '.' || c == ',') {
+                currentNumberPair.addToNumber(index, c);
+                if(debug) System.out.println("Number: " + currentNumberPair.getNumberString(index));
+            } else if(mathList.containsKey(c)) {
+                if(currentNumberPair.getAbstractMath() == null) {
+                    if(debug) System.out.println("No current operator, setting one...");
+                    currentNumberPair.setAbstractMath(mathList.get(c));
+                    currentNumberPair.setOperator(c);
+                    if(debug) System.out.println("Set operator to " + c);
+                    index=1;
+                } else {
+                    if(debug) System.out.println("Already set operator, creating new currentNumberPair");
+                    numberMathPairs.add(currentNumberPair);
+                    currentNumberPair = new NumberPair();
+                    currentNumberPair.setAbstractMath(mathList.get(c));
+                    currentNumberPair.setOperator(c);
+                    if(debug) System.out.println("new current num pair");
                 }
-            }
-        }
-
-        System.out.println("Found Operatoren: " + allFoundOperatoren.toString());
-
-        int amountOperators = allFoundOperatoren.size();
-        int amountNumbers = amountOperators+1;
-        int counter = 1;
-
-        boolean debug = true;
-
-        Double num1 = null;
-        double num2;
-        double zwischenResult;
-        int operatorCounter = 0;
-        for(int i=0; i<amountNumbers; i++) {
-            char c = allFoundOperatoren.get(operatorCounter);
-            if(mathList.containsKey(c)) {
-                if(num1 == null) {
-                    num1 = findNum(c,false, debug);
-                }
-                boolean lastNum = false;
-                if(counter == amountOperators) {
-                    lastNum = true;
-                }
-                num2=findNum(c,lastNum, debug);
-
-                zwischenResult = mathList.get(c).calculate(num1,num2);
-                System.out.println(num1 + " " + c + " " + num2 + " = " + zwischenResult);
-                num1 = zwischenResult;
             } else {
-                System.out.println("Operator " + c + " is unknown!");
+                System.out.println("Unknown operator! skipping...");
             }
-
-            counter++;
         }
-    }
+        numberMathPairs.add(currentNumberPair);
 
-    public double findNum(char operator, boolean lastNum, boolean debug) {
-        for(int i=0; i<mathString.length();i++) {
-            if(Character.isDigit(mathString.charAt(i))) {
+        if(debug) {
+            for (NumberPair pair : numberMathPairs) {
+                System.out.println(pair);
+            }
+        }
 
+        double zwischenResultat = 0.0;
+        for(NumberPair pair : numberMathPairs) {
+            double num1;
+            double num2;
+
+            if(pair.getNumberString(0).equals("")) {
+                // If the first number is empty
+                num1 = zwischenResultat;
             } else {
-                break;
+                num1 = pair.getNumber(0);
+            }
+            if(!pair.getNumberString(1).equals("")) {
+                num2 = pair.getNumber(1);
+
+                zwischenResultat = pair.getAbstractMath().calculate(num1,num2);
+                System.out.println("" + num1 + pair.getOperator() + num2 + "=" + zwischenResultat);
+            } else {
+                zwischenResultat = num1;
             }
         }
 
-        return 0;
+        return zwischenResultat;
     }
-
     public void initAbstractMath() {
         mathList.put('+', new Addition());
         mathList.put('-', new Subtraction());
+        mathList.put('*', new Multiplication());
+        mathList.put('/', new Fraction());
     }
 
     public static void main(String[] args) {

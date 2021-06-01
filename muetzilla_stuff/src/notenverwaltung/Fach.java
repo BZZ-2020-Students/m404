@@ -69,13 +69,22 @@ public class Fach {
         return averageNote;
     }
 
+    public void addNote(Note n) {
+        Note[] notenNew = new Note[noten.length + 1];
+        for (int i = 0; i < noten.length; i++) {
+            notenNew[i] = noten[i];
+        }
+        notenNew[notenNew.length - 1] = n;
+        noten = notenNew;
+    }
+
     @Override
     public String toString() {
         return "******************************************************************\nFach: " + name + "\n=============================\nSemseter: " + semester + "\nSchuljahr: " + schuljahr + "\nNoten: \n" + printNoten() + "\nDurchschnitt: " + df.format(calculateAverageNote());
     }
 
     public String toStringNameAndAverage() {
-        return "\nFach: " + name + "\n\tDurchschnitt: " + df.format(calculateAverageNote()) + "\n***************************************************";
+        return "Fach: " + name + "\tDurchschnitt: " + df.format(calculateAverageNote());
     }
 }
 

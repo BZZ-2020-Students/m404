@@ -1,5 +1,6 @@
 package scanner;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Scan {
@@ -16,6 +17,7 @@ public class Scan {
             System.out.print("Bitte einen gültigen Wert eingeben > ");
         }
         input = scanner.nextInt();
+        scanner.nextLine();
         return input;
     }
 
@@ -30,12 +32,12 @@ public class Scan {
         return input;
     }
 
-    public char scannAnyChar() {
+    public char scanAnyChar() {
         char input = scanner.next().charAt(0);
         return input;
     }
 
-    public char scannJustLetter() {
+    public char scanJustLetter() {
         char input = scanner.next().charAt(0);
         while (!Character.isLetter(input)) {
             System.out.print("Bitte einen Buchstaben eingeben >  ");
@@ -45,23 +47,39 @@ public class Scan {
         return input;
     }
 
-    public double scannNextDouble() {
+    public double scanNextDouble() {
         double input = 0;
         while (!scanner.hasNextDouble()) {
             scanner.next();
             System.out.print("Bitte einen gültigen Wert eingeben > ");
         }
         input = scanner.nextDouble();
+        scanner.nextLine();
         return input;
     }
 
-    public float scannNextFloat() {
+    public float scanNextFloat() {
         float input = 0;
         while (!scanner.hasNextFloat()) {
             scanner.next();
             System.out.print("Bitte einen gültigen Wert eingeben > ");
         }
         input = scanner.nextFloat();
+        scanner.nextLine();
         return input;
+    }
+
+    public LocalDate scanDate() {
+        int year;
+        int month;
+        int day;
+
+        System.out.print("Bitte geben Sie das Jahr ein > ");
+        year = scanInt();
+        System.out.print("Bitte geben Sie den Monat ein > ");
+        month = scanInt();
+        System.out.print("Bitte geben Sie den Tag ein > ");
+        day = scanInt();
+        return LocalDate.of(year, month, day);
     }
 }

@@ -44,9 +44,9 @@ public class Pythagoras {
         if (seiteA.equals("?")) {
             result = calc.seiteA(seiteB, seiteC);
         } else if (seiteB.equals("?")) {
-
+            result = calc.seiteB(seiteA, seiteC);
         } else if (seiteC.equals("?")) {
-
+            result = calc.seiteC(seiteA, seiteB);
         }
     }
 }

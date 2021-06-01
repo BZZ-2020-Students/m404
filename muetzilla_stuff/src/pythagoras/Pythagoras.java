@@ -1,0 +1,28 @@
+package pythagoras;
+
+/**
+ * short description of this program
+ *
+ * @author
+ * @version 1.0
+ * @date 2021.06.01
+ */
+public class Pythagoras {
+    public Pythagoras() {
+
+    }
+
+    /**
+     * starts the execution
+     *
+     * @param args command line arguments
+     */
+    public static void main(String[] args) {
+        Pythagoras pythagoras = new Pythagoras();
+        pythagoras.run();
+    }
+
+    public void run() {
+        System.out.print("Willkommen beim Pythagoras Rechner\n###############################################\nGeben Sie zwei der 3 Längen an. In der letzen geben Sie ein ? ein > ");
+    }
+}

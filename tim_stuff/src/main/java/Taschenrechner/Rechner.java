@@ -7,7 +7,6 @@ import java.util.HashMap;
 
 public class Rechner {
     private HashMap<Character, AbstractMath> mathList = new HashMap();
-    private final char[] validOperatoren = {'+','-'};
     Einleser scanner = new Einleser();
     boolean debug = false;
 
@@ -22,7 +21,7 @@ public class Rechner {
         debug = scanner.readBoolean();
         System.out.print("Geben sie bitte ihre Rechnung ein > ");
         System.out.println("Resultat = " + mathInterpreter(scanner.readString()));
-        //System.out.println(mathInterpreter("123+456-78.9+1111"));
+        // System.out.println(mathInterpreter("123+456-78.9+1111"));
     }
 
     public double mathInterpreter(String mathString) {

@@ -9,11 +9,6 @@ public class NumberPair {
     private AbstractMath abstractMath = null;
     private char operator;
 
-    public NumberPair(String[] numbers, AbstractMath abstractMath) {
-        this.numbers = numbers;
-        this.abstractMath = abstractMath;
-    }
-
     public NumberPair() {
     }
 

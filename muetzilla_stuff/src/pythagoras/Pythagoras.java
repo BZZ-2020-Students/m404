@@ -45,16 +45,17 @@ public class Pythagoras {
 
             if (seiteA.equals("?")) {
                 result = calc.seiteA(seiteB, seiteC);
+                System.out.println("Die Länge der Seite a beträgt: " + result);
             } else if (seiteB.equals("?")) {
                 result = calc.seiteB(seiteA, seiteC);
+                System.out.println("Die Länge der Seite b beträgt: " + result);
             } else if (seiteC.equals("?")) {
                 result = calc.seiteC(seiteA, seiteB);
+                System.out.println("Die Länge der Seite c beträgt: " + result);
             } else {
                 System.out.println("Kein ? vorhanden. Bitte versuchen Sie es erneut!");
             }
-            if (result != 0) {
-                System.out.println("Das Resultat ist: " + result);
-            }
+
             System.out.print("Möchten Sie noch eine Berechnung machen (true/false) > ");
             nextTriangel = scanner.scanBoolean();
 

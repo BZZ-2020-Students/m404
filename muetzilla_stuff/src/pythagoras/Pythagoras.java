@@ -29,29 +29,35 @@ public class Pythagoras {
     }
 
     public void run() {
+        boolean nextTriangel;
         String seiteA;
         String seiteB;
         String seiteC;
         double result = 0;
-        System.out.print("Willkommen beim Pythagoras Rechner\n###############################################\nGeben Sie zwei der 3 Längen an. In der letzen geben Sie ein ? ein.\n");
-        System.out.print("Seite a > ");
-        seiteA = scanner.scanString();
-        System.out.print("Seite b > ");
-        seiteB = scanner.scanString();
-        System.out.print("Seite c > ");
-        seiteC = scanner.scanString();
+        do {
+            System.out.print("Willkommen beim Pythagoras Rechner\n###############################################\nGeben Sie zwei der 3 Längen an. In der letzen geben Sie ein ? ein.\n");
+            System.out.print("Seite a > ");
+            seiteA = scanner.scanString();
+            System.out.print("Seite b > ");
+            seiteB = scanner.scanString();
+            System.out.print("Seite c > ");
+            seiteC = scanner.scanString();
 
-        if (seiteA.equals("?")) {
-            result = calc.seiteA(seiteB, seiteC);
-        } else if (seiteB.equals("?")) {
-            result = calc.seiteB(seiteA, seiteC);
-        } else if (seiteC.equals("?")) {
-            result = calc.seiteC(seiteA, seiteB);
-        } else {
-            System.out.println("Kein ? vorhanden. Bitte versuchen Sie es erneut!");
-        }
-        if (result != 0) {
-            
-        }
+            if (seiteA.equals("?")) {
+                result = calc.seiteA(seiteB, seiteC);
+            } else if (seiteB.equals("?")) {
+                result = calc.seiteB(seiteA, seiteC);
+            } else if (seiteC.equals("?")) {
+                result = calc.seiteC(seiteA, seiteB);
+            } else {
+                System.out.println("Kein ? vorhanden. Bitte versuchen Sie es erneut!");
+            }
+            if (result != 0) {
+                System.out.println("Das Resultat ist: " + result);
+            }
+            System.out.print("Möchten Sie noch eine Berechnung machen (true/false) > ");
+            nextTriangel = scanner.scanBoolean();
+
+        } while (nextTriangel);
     }
 }

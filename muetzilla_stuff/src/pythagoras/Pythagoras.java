@@ -28,11 +28,12 @@ public class Pythagoras {
 
     public void run() {
         String seiteA;
-        
+        String seiteB;
         System.out.print("Willkommen beim Pythagoras Rechner\n###############################################\nGeben Sie zwei der 3 Längen an. In der letzen geben Sie ein ? ein > ");
         System.out.print("Seite a > ");
         seiteA = scanner.scanString();
         System.out.print("Seite b > ");
+        seiteB = scanner.scanString();
 
     }
 }

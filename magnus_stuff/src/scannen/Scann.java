@@ -17,6 +17,15 @@ public class Scann {
         return zahl;
     }
 
+    public float readFloat() {
+        while (!scanner.hasNextFloat()){
+            System.out.println("Bitte gib eine Zahl ein!");
+            scanner.next();
+        }
+        float zahl = scanner.nextFloat();
+        return zahl;
+    }
+
     public int readInt() {
         while (!scanner.hasNextInt()){
             System.out.println("Bitte gib eine Ganzzahl ein!");
@@ -70,5 +79,9 @@ public class Scann {
         day = readInt();
         LocalDate datum = LocalDate.of(year, month, day);
         return datum;
+    }
+
+    public String readString(){
+        return scanner.nextLine();
     }
 }

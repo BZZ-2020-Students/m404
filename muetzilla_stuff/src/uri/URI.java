@@ -48,13 +48,13 @@ public class URI {
 
             if (u.equals("?")) {
                 result = calc.calculateU(r, i);
-                System.out.println("U beträgt: " + result);
+                System.out.println("U beträgt: " + result + "V");
             } else if (r.equals("?")) {
                 result = calc.calculateR(u, i);
-                System.out.println("R beträgt: " + result);
+                System.out.println("R beträgt: " + result + "Ω");
             } else if (i.equals("?")) {
                 result = calc.calculateI(u, r);
-                System.out.println("I beträgt: " + result);
+                System.out.println("I beträgt: " + result + "A");
             } else {
                 System.out.println("Kein ? vorhanden. Bitte versuchen Sie es erneut!");
             }

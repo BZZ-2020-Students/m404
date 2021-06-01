@@ -24,5 +24,7 @@ public class Pythagoras {
 
     public void run() {
         System.out.print("Willkommen beim Pythagoras Rechner\n###############################################\nGeben Sie zwei der 3 Längen an. In der letzen geben Sie ein ? ein > ");
+        System.out.print("Seite a > ");
+        
     }
 }

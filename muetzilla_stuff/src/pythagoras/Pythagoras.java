@@ -27,7 +27,6 @@ public class Pythagoras {
         Pythagoras pythagoras = new Pythagoras();
         pythagoras.run();
     }
-    
 
     public void run() {
         boolean nextTriangel;

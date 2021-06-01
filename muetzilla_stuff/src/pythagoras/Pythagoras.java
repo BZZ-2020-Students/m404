@@ -32,8 +32,8 @@ public class Pythagoras {
         String seiteA;
         String seiteB;
         String seiteC;
-        double result;
-        System.out.print("Willkommen beim Pythagoras Rechner\n###############################################\nGeben Sie zwei der 3 Längen an. In der letzen geben Sie ein ? ein > ");
+        double result = 0;
+        System.out.print("Willkommen beim Pythagoras Rechner\n###############################################\nGeben Sie zwei der 3 Längen an. In der letzen geben Sie ein ? ein.\n");
         System.out.print("Seite a > ");
         seiteA = scanner.scanString();
         System.out.print("Seite b > ");
@@ -47,6 +47,11 @@ public class Pythagoras {
             result = calc.seiteB(seiteA, seiteC);
         } else if (seiteC.equals("?")) {
             result = calc.seiteC(seiteA, seiteB);
+        } else {
+            System.out.println("Kein ? vorhanden. Bitte versuchen Sie es erneut!");
+        }
+        if (result != 0) {
+            
         }
     }
 }

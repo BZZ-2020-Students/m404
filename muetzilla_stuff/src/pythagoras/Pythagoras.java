@@ -36,21 +36,21 @@ public class Pythagoras {
         double result = 0;
         do {
             System.out.print("Willkommen beim Pythagoras Rechner\n###############################################\nGeben Sie zwei der 3 Längen an. In der letzen geben Sie ein ? ein.\n");
-            System.out.print("Seite a > ");
+            System.out.print("Kathete  a > ");
             seiteA = scanner.scanString();
-            System.out.print("Seite b > ");
+            System.out.print("Kathete b > ");
             seiteB = scanner.scanString();
-            System.out.print("Seite c > ");
+            System.out.print("Hypotenuse c > ");
             seiteC = scanner.scanString();
 
             if (seiteA.equals("?")) {
-                result = calc.seiteA(seiteB, seiteC);
+                result = calc.calculateU(seiteB, seiteC);
                 System.out.println("Die Länge der Seite a beträgt: " + result);
             } else if (seiteB.equals("?")) {
-                result = calc.seiteB(seiteA, seiteC);
+                result = calc.calculateR(seiteA, seiteC);
                 System.out.println("Die Länge der Seite b beträgt: " + result);
             } else if (seiteC.equals("?")) {
-                result = calc.seiteC(seiteA, seiteB);
+                result = calc.calculateI(seiteA, seiteB);
                 System.out.println("Die Länge der Seite c beträgt: " + result);
             } else {
                 System.out.println("Kein ? vorhanden. Bitte versuchen Sie es erneut!");

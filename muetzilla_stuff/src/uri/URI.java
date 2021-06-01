@@ -47,13 +47,13 @@ public class URI {
             i = scanner.scanString();
 
             if (u.equals("?")) {
-                result = calc.seiteA(r, i);
+                result = calc.calculateU(r, i);
                 System.out.println("U beträgt: " + result);
             } else if (r.equals("?")) {
-                result = calc.seiteB(u, i);
+                result = calc.calculateR(u, i);
                 System.out.println("R beträgt: " + result);
             } else if (i.equals("?")) {
-                result = calc.seiteC(u, r);
+                result = calc.calculateI(u, r);
                 System.out.println("I beträgt: " + result);
             } else {
                 System.out.println("Kein ? vorhanden. Bitte versuchen Sie es erneut!");

@@ -1,4 +1,4 @@
-package URI_Rechner;
+package PythagorasRechner;
 
 import java.util.Scanner;
 

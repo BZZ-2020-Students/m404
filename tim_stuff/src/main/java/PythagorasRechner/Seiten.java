@@ -1,16 +1,11 @@
-package URI_Rechner;
+package PythagorasRechner;
 
-public enum Einheit {
-    VOLT("U"),
-    OHM("R"),
-    AMPERE("I");
+public enum Seiten {
+    SEITE_a,
+    SEITE_b,
+    SEITE_c;
 
     private Double value;
-    private final String shortName;
-
-    Einheit(String shortName) {
-        this.shortName = shortName;
-    }
 
     public void setValue(String s) {
         if(s.charAt(0) == '?') {
@@ -24,12 +19,8 @@ public enum Einheit {
         return this.value;
     }
 
-    public String getShortName() {
-        return this.shortName;
-    }
-
-    private static Einheit[] vals = values();
-    public Einheit next()
+    private static Seiten[] vals = values();
+    public Seiten next()
     {
         return vals[(this.ordinal()+1) % vals.length];
     }

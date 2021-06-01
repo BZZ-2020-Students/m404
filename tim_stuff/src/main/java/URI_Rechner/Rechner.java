@@ -5,14 +5,10 @@ public class Rechner {
     Einleser scanner = new Einleser();
 
     public Rechner() {
-        System.out.print("U (VOLT) > ");
-        Einheit.VOLT.setValue(scanner.readString().replaceAll(" ",""));
-
-        System.out.print("R (OHM) > ");
-        Einheit.OHM.setValue(scanner.readString().replaceAll(" ",""));
-
-        System.out.print("I (AMPERE) > ");
-        Einheit.AMPERE.setValue(scanner.readString().replaceAll(" ",""));
+        for(Einheit einheit : Einheit.values()) {
+            System.out.print(einheit + " (" + einheit.getShortName() + ") > ");
+            einheit.setValue(scanner.readString().replaceAll(" ",""));
+        }
 
         Einheit einheit = Einheit.values()[0];
         for(int i = 0; i < Einheit.values().length; i++) {
@@ -23,8 +19,8 @@ public class Rechner {
             }
         }
 
-        System.out.println("Zu findende Einheit : " + einheit);
-        System.out.println(einheit + " = " + berechnen(einheit));
+        // System.out.println("Zu findende Einheit : " + einheit);
+        System.out.println(einheit + " (" + einheit.getShortName() + ") = " + berechnen(einheit));
     }
 
     public double berechnen(Einheit einheit) {

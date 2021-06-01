@@ -1,6 +1,8 @@
 package calculator.operators;
 
 
+import calculator.memory.Memorizable;
+
 public interface Operator {
     /**
      * Function to calculate a result with the given parameters

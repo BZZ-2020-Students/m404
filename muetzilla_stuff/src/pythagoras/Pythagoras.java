@@ -11,9 +11,11 @@ import scanner.Scan;
  */
 public class Pythagoras {
     Scan scanner;
+    Calculation calc;
 
     public Pythagoras() {
         scanner = new Scan();
+        calc = new Calculation();
     }
 
     /**
@@ -30,6 +32,7 @@ public class Pythagoras {
         String seiteA;
         String seiteB;
         String seiteC;
+        double result;
         System.out.print("Willkommen beim Pythagoras Rechner\n###############################################\nGeben Sie zwei der 3 Längen an. In der letzen geben Sie ein ? ein > ");
         System.out.print("Seite a > ");
         seiteA = scanner.scanString();
@@ -37,8 +40,13 @@ public class Pythagoras {
         seiteB = scanner.scanString();
         System.out.print("Seite c > ");
         seiteC = scanner.scanString();
-        if (seiteA.equals("?")) {
 
+        if (seiteA.equals("?")) {
+            result = calc.seiteA;
         } else if (seiteB.equals("?")) {
+
+        } else if (seiteC.equals("?")) {
+
         }
     }
+}

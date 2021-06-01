@@ -2,7 +2,6 @@ package taschenrechner;
 
 
 import java.util.Scanner;
-import taschenrechner.Calculus;
 
 public class Rechner {
 

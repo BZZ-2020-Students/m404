@@ -42,7 +42,7 @@ public class Pythagoras {
         seiteC = scanner.scanString();
 
         if (seiteA.equals("?")) {
-            result = calc.seiteA();
+            result = calc.seiteA(seiteB, seiteC);
         } else if (seiteB.equals("?")) {
 
         } else if (seiteC.equals("?")) {

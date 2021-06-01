@@ -13,7 +13,7 @@ public class RechnerPythagoras {
 
     public void run() {
         Scann scann = new Scann();
-        PhytagorasCal phytagorasCal = new PhytagorasCal();
+        PythagorasCal pythagorasCal = new PythagorasCal();
         double result = 0;
         String antwort = null;
         String k1;
@@ -28,13 +28,13 @@ public class RechnerPythagoras {
 
         if (k1.equals("?")) {
             antwort = "Ergebnis Kahete Eins";
-            result = phytagorasCal.kCalculate(Double.valueOf(k2), Double.valueOf(h));
+            result = pythagorasCal.kCalculate(Double.valueOf(k2), Double.valueOf(h));
         } else if (k2.equals("?")) {
             antwort = "Ergebnis Kahete Zwei";
-            result = phytagorasCal.kCalculate(Double.valueOf(k1), Double.valueOf(h));
+            result = pythagorasCal.kCalculate(Double.valueOf(k1), Double.valueOf(h));
         } else if (h.equals("?")) {
             antwort = "Ergebnis Hypotenuse";
-            result = phytagorasCal.hCalculate(Double.valueOf(k1), Double.valueOf(k2));
+            result = pythagorasCal.hCalculate(Double.valueOf(k1), Double.valueOf(k2));
         } else {
             System.out.println("Fehler");
         }

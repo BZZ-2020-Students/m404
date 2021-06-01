@@ -1,6 +1,6 @@
 package pythagoras;
 
-public class PhytagorasCal {
+public class PythagorasCal {
     public double kCalculate(double k, double h) {
         return Math.sqrt(Math.pow(h, 2)-Math.pow(k, 2));
     }

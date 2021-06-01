@@ -39,6 +39,6 @@ public class Pythagoras {
         seiteC = scanner.scanString();
         if (seiteA.equals("?")) {
 
+        } else if (seiteB.equals("?")) {
         }
     }
-}

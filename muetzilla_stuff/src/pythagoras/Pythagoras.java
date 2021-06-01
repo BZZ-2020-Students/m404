@@ -37,5 +37,8 @@ public class Pythagoras {
         seiteB = scanner.scanString();
         System.out.print("Seite c > ");
         seiteC = scanner.scanString();
+        if (seiteA.equals("?")) {
+
+        }
     }
 }

@@ -8,11 +8,15 @@ public class InputReader {
     private final Scanner sc = new Scanner(System.in);
 
     public double readDouble() {
+        return readDouble(true);
+    }
+    public double readDouble(boolean allowZero) {
         while (!sc.hasNextDouble()) {
             System.out.println("Please enter a valid Double!");
             sc.next();
         }
         double out = sc.nextDouble();
+        if (out == 0 && !allowZero) out = readDouble(true);
         sc.nextLine();
         return out;
     }

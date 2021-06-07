@@ -1,4 +1,4 @@
-package calculator;
+package uriRechner;
 
 import java.util.Scanner;
 
@@ -17,18 +17,15 @@ public class Einleser {
         sc.nextLine();
         return nr1;
     }
-
     public double readDouble(String input) {
         System.out.println(input);
         return readDouble();
     }
-
     public char readChar() {
         char ch = sc.nextLine().charAt(0);
 
         return ch;
     }
-
     public String readString() {
         String s = sc.nextLine();
         return s;
@@ -38,4 +35,5 @@ public class Einleser {
         System.out.print(input);
         return readString();
     }
+
 }

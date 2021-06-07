@@ -13,7 +13,7 @@ public class Rechner {
         String inputU;
         String inputI;
         String inputR;
-        
+
         System.out.println("---------------URI Calculator---------------");
         System.out.println("Enter a \"?\" for the value in question!");
         System.out.println();

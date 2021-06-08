@@ -45,6 +45,6 @@ public class Flugzeug {
     }
 
     public Passagier[] getQuarantiedPerson(int seat[], Passagier[][] passagiers) {
-        return null
+        return null;
     }
 }

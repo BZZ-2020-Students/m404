@@ -1,7 +1,6 @@
 package calculator.operators;
 
 
-import calculator.memory.Memorizable;
 
 public interface Operator {
     /**

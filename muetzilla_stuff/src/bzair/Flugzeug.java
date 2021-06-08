@@ -61,6 +61,7 @@ public class Flugzeug {
         Passagier[] betroffenePersonen = new Passagier[8];
         int reihe = seat[0];
         int sitz = seat[1];
+        //Wird überarbeitet...
         if (reihe == 0) {
             if (sitz == 0) {
                 betroffenePersonen[0] = passagiers[reihe][sitz + 1];

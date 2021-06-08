@@ -37,6 +37,5 @@ public class AsciiArt {
         }
 
         fw.close();
-
     }
 }

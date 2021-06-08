@@ -48,7 +48,51 @@ public class Flugzeug {
         Passagier[] betroffenePersonen = new Passagier[8];
         int reihe = seat[0];
         int sitz = seat[1];
-        if (reihe)
-            return null;
+        if (reihe == 0) {
+            if (sitz == 0) {
+                betroffenePersonen[0] = passagiers[reihe][sitz + 1];
+                betroffenePersonen[1] = passagiers[reihe + 1][sitz + 1];
+                betroffenePersonen[2] = passagiers[reihe + 1][sitz];
+            } else {
+                betroffenePersonen[0] = passagiers[reihe - 1][sitz];
+                betroffenePersonen[1] = passagiers[reihe - 1][sitz + 1];
+                betroffenePersonen[2] = passagiers[reihe][sitz + 1];
+                betroffenePersonen[3] = passagiers[reihe + 1][sitz + 1];
+                betroffenePersonen[4] = passagiers[reihe + 1][sitz];
+            }
+        } else if (sitz == 0) {
+            betroffenePersonen[0] = passagiers[reihe][sitz + 1];
+            betroffenePersonen[1] = passagiers[reihe + 1][sitz + 1];
+            betroffenePersonen[2] = passagiers[reihe + 1][sitz];
+            betroffenePersonen[3] = passagiers[reihe + 1][sitz - 1];
+            betroffenePersonen[4] = passagiers[reihe][sitz - 1];
+
+        } else if (reihe == anzhalReihen) {
+            if (sitz == anzahlSitzeProReihe) {
+                betroffenePersonen[0] = passagiers[reihe - 1][sitz - 1];
+                betroffenePersonen[1] = passagiers[reihe - 1][sitz];
+                betroffenePersonen[2] = passagiers[reihe][sitz - 1];
+
+            } else {
+                betroffenePersonen[0] = passagiers[reihe - 1][sitz - 1];
+                betroffenePersonen[1] = passagiers[reihe - 1][sitz];
+                betroffenePersonen[2] = passagiers[reihe][sitz - 1];
+                betroffenePersonen[3] = passagiers[reihe + 1][sitz - 1];
+                betroffenePersonen[4] = passagiers[reihe + 1][sitz];
+
+            }
+        } else if (sitz == anzahlSitzeProReihe) {
+
+        } else {
+            betroffenePersonen[0] = passagiers[reihe - 1][sitz - 1];
+            betroffenePersonen[1] = passagiers[reihe - 1][sitz];
+            betroffenePersonen[2] = passagiers[reihe - 1][sitz + 1];
+            betroffenePersonen[3] = passagiers[reihe][sitz - 1];
+            betroffenePersonen[4] = passagiers[reihe - 1][sitz + 1];
+            betroffenePersonen[5] = passagiers[reihe + 1][sitz - 1];
+            betroffenePersonen[6] = passagiers[reihe + 1][sitz];
+            betroffenePersonen[7] = passagiers[reihe + 1][sitz + 1];
+        }
+        return betroffenePersonen;
     }
 }

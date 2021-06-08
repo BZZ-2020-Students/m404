@@ -38,13 +38,17 @@ public class Flugzeug {
         int[] seat = new int[2];
         int sitznummer = p.getSitznummer();
         int reihe = sitznummer / anzahlReihen;
-        int sitz = sitznummer % anzahlReihen;
+        int sitz = sitznummer % anzahlReihen - 1;
         seat[0] = reihe;
         seat[1] = sitz;
         return seat;
     }
 
-    public Passagier[] getQuarantiedPerson(int seat[], Passagier[][] passagiers) {
-        return null;
+    public Passagier[] getQuarantiedPerson(int seat[], Passagier[][] passagiers, int anzhalReihen, int anzahlSitzeProReihe) {
+        Passagier[] betroffenePersonen = new Passagier[8];
+        int reihe = seat[0];
+        int sitz = seat[1];
+        if (reihe)
+            return null;
     }
 }

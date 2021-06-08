@@ -22,7 +22,7 @@ public class Demo {
         Passagier p12 = new Passagier("23", "Mals", "Mal", LocalDate.of(1999,2,6));
         Passagier[][] list = {{p1,p2,p3,p4},{p5,p6,p7,p8},{p9,p10,p11,p12}};
         Control c = new Control();
-        Passagier[] passagierFinal = c.control(list, p1);
+        Passagier[] passagierFinal = c.control(list, p1.getSitznummer());
 
         for(Passagier p : passagierFinal){
             if(p != null) System.out.println(p);

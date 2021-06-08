@@ -21,8 +21,9 @@ public class Demo {
         Passagier p11 = new Passagier("22", "Kals", "Rand", LocalDate.of(1975,2,8));
         Passagier p12 = new Passagier("23", "Mals", "Mal", LocalDate.of(1999,2,6));
         Passagier[][] list = {{p1,p2,p3,p4},{p5,p6,p7,p8},{p9,p10,p11,p12}};
+        Flugzeug flugzeug = new Flugzeug("A34BC", list);
         Control c = new Control();
-        Passagier[] passagierFinal = c.control(list, p1.getSitznummer());
+        Passagier[] passagierFinal = c.control(flugzeug.getPassagiers(), p1.getSitznummer());
 
         for(Passagier p : passagierFinal){
             if(p != null) System.out.println(p);

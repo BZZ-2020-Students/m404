@@ -1,5 +1,11 @@
 package Passagier;
-
+/**
+ * Check which Passengers were sitting next to the Person
+ *
+ * @author Magnus Götz
+ * @version 0.1
+ * @since 2021.06.08
+ */
 public class Control {
     public Passagier[] control(Passagier[][] passagiers, String sitznummer) {
         String[] str = (sitznummer).split("");

@@ -59,4 +59,9 @@ public class Passagier {
     public void setPositivesTestergebnis(boolean positivesTestergebnis) {
         this.positivesTestergebnis = positivesTestergebnis;
     }
+
+    @Override
+    public String toString() {
+        return "Vorname: " + vorname + " Nachname: " + nachname + " Sitzplatz: " + sitznummer + " Geburtsdatum: " + gebDatum + " positives Testergebnis: " + positivesTestergebnis;
+    }
 }

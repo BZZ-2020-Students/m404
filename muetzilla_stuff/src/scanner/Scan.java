@@ -28,7 +28,7 @@ public class Scan {
 
     public boolean scanBoolean() {
         boolean input = scanner.nextBoolean();
-
+        scanner.nextLine();
         return input;
     }
 

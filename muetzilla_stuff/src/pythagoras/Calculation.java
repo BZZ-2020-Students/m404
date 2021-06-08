@@ -2,15 +2,21 @@ package pythagoras;
 
 public class Calculation {
 
-    public double seiteA(String seiteB, String seiteC) {
-        return 0;
+    public double calculateU(String iString, String rString) {
+        double iDouble = Double.parseDouble(iString);
+        double rDouble = Double.parseDouble(rString);
+        return iDouble * rDouble;
     }
 
-    public double seiteB(String seiteA, String seiteC) {
-        return 0;
+    public double calculateR(String uString, String iString) {
+        double uDouble = Double.parseDouble(uString);
+        double iDouble = Double.parseDouble(iString);
+        return uDouble / iDouble;
     }
 
-    public double seiteC(String seiteA, String seiteB) {
-        return 0;
+    public double calculateI(String uString, String rString) {
+        double uDouble = Double.parseDouble(uString);
+        double rDouble = Double.parseDouble(rString);
+        return uDouble / rDouble;
     }
 }

@@ -52,7 +52,7 @@ public class Passagier {
         this.gebDatum = gebDatum;
     }
 
-    public boolean isPositivesTestergebnis() {
+    public boolean getPositivesTestergebnis() {
         return positivesTestergebnis;
     }
 

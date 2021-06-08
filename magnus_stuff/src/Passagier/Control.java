@@ -14,8 +14,8 @@ public class Control {
         if(y + 1 < passagiers.length && x - 1 >= 0) passagierFinal[3] = passagiers[y+1][x-1];
         if(y + 1 < passagiers.length)passagierFinal[4] = passagiers[y+1][x];
         if(y + 1 < passagiers.length && x + 1 < passagiers[y+1].length) passagierFinal[5] = passagiers[y+1][x+1];
-        if(x + 1 < passagiers[x].length) passagierFinal[6] = passagiers[y][x+1];
-        if(x + 1 < passagiers[x].length && y - 1 >= 0) passagierFinal[7] = passagiers[y-1][x+1];
+        if(x + 1 < passagiers[y].length) passagierFinal[6] = passagiers[y][x+1];
+        if(x + 1 < passagiers[y].length && y - 1 >= 0) passagierFinal[7] = passagiers[y-1][x+1];
 
         return passagierFinal;
     }

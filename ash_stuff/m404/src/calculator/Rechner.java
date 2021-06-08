@@ -1,9 +1,8 @@
 package calculator;
 
-import java.util.Scanner;
+import scanner.Einleser;
 
 public class Rechner {
-    static Scanner sc;
     public static void main(String[] args) {
         new Rechner().run();
     }

@@ -1,4 +1,4 @@
-package calculator;
+package scanner;
 
 import java.util.Scanner;
 
@@ -38,4 +38,5 @@ public class Einleser {
         System.out.print(input);
         return readString();
     }
+
 }

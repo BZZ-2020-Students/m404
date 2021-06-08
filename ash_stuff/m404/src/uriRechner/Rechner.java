@@ -1,6 +1,6 @@
 package uriRechner;
 
-import calculator.Einleser;
+import scanner.Einleser;
 
 public class Rechner {
     public static void main(String[] args) {

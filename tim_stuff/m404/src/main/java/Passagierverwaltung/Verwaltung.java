@@ -75,7 +75,7 @@ public class Verwaltung {
         int endPosY = (reihe + 1 > AMOUNT_ROWS-1) ? reihe : reihe + 1;
         System.out.println("Start: {X:" + startPosX + ",Y:" +
                 startPosY + "},End: {X:" +
-                endPosX + ",Y" +
+                endPosX + ",Y:" +
                 endPosY + "}");
 
         for (int rowNum = startPosY; rowNum <= endPosY; rowNum++) {

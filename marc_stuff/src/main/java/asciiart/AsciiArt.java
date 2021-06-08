@@ -35,7 +35,6 @@ public class AsciiArt {
             }
             fw.write(System.lineSeparator());
         }
-
         fw.close();
     }
 }

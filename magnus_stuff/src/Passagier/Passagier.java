@@ -3,10 +3,10 @@ package Passagier;
 import java.time.LocalDate;
 
 public class Passagier {
-    String sitznummer;
-    String name;
-    String vorname;
-    LocalDate geburtsdatum;
+    private String sitznummer;
+    private String name;
+    private String vorname;
+    private LocalDate geburtsdatum;
 
     public Passagier(){}
 

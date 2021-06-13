@@ -1,5 +1,11 @@
 package Passagier;
-
+/**
+ * Check which Passengers were sitting next to the Person
+ *
+ * @author Magnus Götz
+ * @version 0.1
+ * @since 2021.06.08
+ */
 public class Control {
     public Passagier[] control(Passagier[][] passagiers, String sitznummer) {
         String[] str = (sitznummer).split("");
@@ -7,8 +13,6 @@ public class Control {
         int x = Integer.parseInt(str[1]); // Column of the Chair
         Passagier[] passagierFinal = new Passagier[8]; // Max Passengers
 
-        // See if there sits someone
-        if(x - 1 >= 0) passagierFinal[0] = passagiers[y][x-1];
         if(x - 1 >= 0 && y - 1 >= 0) passagierFinal[1] = passagiers[y-1][x-1];
         if(y - 1 >= 0) passagierFinal[2] = passagiers[y-1][x];
         if(y + 1 < passagiers.length && x - 1 >= 0) passagierFinal[3] = passagiers[y+1][x-1];

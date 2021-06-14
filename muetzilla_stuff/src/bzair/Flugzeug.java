@@ -84,10 +84,6 @@ public class Flugzeug {
     }
 
     public boolean positivPassengar() {
-        boolean positivPassengar = false;
-        if (calculatePositiveChance() > 0.125) {
-            positivPassengar = true;
-        }
-        return positivPassengar;
+        return calculatePositiveChance() > 0.125;
     }
 }

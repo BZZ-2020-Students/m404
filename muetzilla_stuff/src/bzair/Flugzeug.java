@@ -45,6 +45,7 @@ public class Flugzeug {
         } else {
             System.out.println("Es ist kein Passagier mit einem positivem Test vorhanden.");
         }
+        
     }
 
     public int[] findSeat(Passagier p, int anzahlReihen) {

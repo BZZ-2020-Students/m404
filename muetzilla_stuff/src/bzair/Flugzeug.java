@@ -61,7 +61,6 @@ public class Flugzeug {
         Passagier[] betroffenePersonen = new Passagier[8];
         int reihe = seat[0] - 1;
         int sitz = seat[1];
-        int quarantiedPersonCount = 0;
         System.out.println(reihe);
         System.out.println(sitz);
         System.out.println(passagiers.length);
@@ -74,71 +73,7 @@ public class Flugzeug {
         if (sitz + 1 < passagiers[reihe].length) betroffenePersonen[6] = passagiers[reihe][sitz + 1];
         if (sitz + 1 < passagiers[reihe].length && reihe - 1 >= 0)
             betroffenePersonen[7] = passagiers[reihe - 1][sitz + 1];
-
-        /*
-        for (int i = -1; i <= 1; ++i) {
-            for (int j = -1; j <= 1; ++j) {
-                if (i == 0 && j == 0) {
-                    continue;
-                }
-                if (i + reihe >= 0 && i + reihe < passagiers.length && j + sitz >= 0 && j + sitz < passagiers[0].length) {
-                    betroffenePersonen[quarantiedPersonCount] = passagiers[reihe][sitz];
-                    quarantiedPersonCount++;
-                    System.out.println(quarantiedPersonCount);
-                }
-            }
-        }*/
         return betroffenePersonen;
-
-
-        //Wird überarbeitet...
-        /*
-        if (reihe == 0) {
-            if (sitz == 0) {
-                betroffenePersonen[0] = passagiers[reihe][sitz + 1];
-                betroffenePersonen[1] = passagiers[reihe + 1][sitz + 1];
-                betroffenePersonen[2] = passagiers[reihe + 1][sitz];
-            } else {
-                betroffenePersonen[0] = passagiers[reihe - 1][sitz];
-                betroffenePersonen[1] = passagiers[reihe - 1][sitz + 1];
-                betroffenePersonen[2] = passagiers[reihe][sitz + 1];
-                betroffenePersonen[3] = passagiers[reihe + 1][sitz + 1];
-                betroffenePersonen[4] = passagiers[reihe + 1][sitz];
-            }
-        } else if (sitz == 0) {
-            betroffenePersonen[0] = passagiers[reihe][sitz + 1];
-            betroffenePersonen[1] = passagiers[reihe + 1][sitz + 1];
-            betroffenePersonen[2] = passagiers[reihe + 1][sitz];
-            betroffenePersonen[3] = passagiers[reihe + 1][sitz - 1];
-            betroffenePersonen[4] = passagiers[reihe][sitz - 1];
-
-        } else if (reihe == anzhalReihen) {
-            if (sitz == anzahlSitzeProReihe) {
-                betroffenePersonen[0] = passagiers[reihe - 1][sitz - 1];
-                betroffenePersonen[1] = passagiers[reihe - 1][sitz];
-                betroffenePersonen[2] = passagiers[reihe][sitz - 1];
-
-            } else {
-                betroffenePersonen[0] = passagiers[reihe - 1][sitz - 1];
-                betroffenePersonen[0] = passagiers[reihe - 1][sitz];
-                betroffenePersonen[5] = passagiers[reihe + 1][sitz - 1];
-            }
-        } else if (sitz == anzahlSitzeProReihe) {
-            betroffenePersonen[0] = passagiers[reihe - 1][sitz - 1];
-            betroffenePersonen[1] = passagiers[reihe - 1][sitz];
-            betroffenePersonen[2] = passagiers[reihe][sitz - 1];
-            betroffenePersonen[3] = passagiers[reihe + 1][sitz - 1];
-            betroffenePersonen[4] = passagiers[reihe + 1][sitz];
-        } else {
-            betroffenePersonen[0] = passagiers[reihe - 1][sitz - 1];
-            betroffenePersonen[1] = passagiers[reihe - 1][sitz];
-            betroffenePersonen[2] = passagiers[reihe - 1][sitz + 1];
-            betroffenePersonen[3] = passagiers[reihe][sitz - 1];
-            betroffenePersonen[4] = passagiers[reihe - 1][sitz + 1];
-            betroffenePersonen[5] = passagiers[reihe + 1][sitz - 1];
-            betroffenePersonen[6] = passagiers[reihe + 1][sitz];
-            betroffenePersonen[7] = passagiers[reihe + 1][sitz + 1];
-        }*/
     }
 
     public float calculatePositiveChance() {

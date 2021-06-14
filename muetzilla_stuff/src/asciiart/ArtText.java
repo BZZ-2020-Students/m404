@@ -1,3 +1,4 @@
+package asciiart;
 
 public class ArtText {
 

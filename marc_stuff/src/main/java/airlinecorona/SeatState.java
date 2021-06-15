@@ -2,7 +2,7 @@ package airlinecorona;
 
 public enum SeatState {
     EMPTY(". "),
-    OCCUPIED("O "),
+    OCCUPIED("- "),
     INFECTED("X ");
 
     private final String display;

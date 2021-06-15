@@ -20,13 +20,14 @@ public class Main {
         einleser = new Einleser();
         System.out.println("Ganzzahl: ");
         int zahl = einleser.readInt();
-        do {
-                System.out.println("Die Zahl muss zwischen 1 - 9999 liegen");
-                zahl = einleser.readInt();
+        if(zahl > 9999 || zahl < 1) {
+            System.out.println("Die Zahl muss zwischen 1 - 9999 liegen");
+        }else{
+            System.out.println("Die Römische Zahl von " + zahl + " ist: " + umwandeln(zahl));
+        }
 
-        }while(zahl > 9999);
 
-        System.out.println("Die Römische Zahl von " + zahl + " ist: " + umwandeln(zahl));
+
     }
 
     private static String umwandeln(int zahl) {

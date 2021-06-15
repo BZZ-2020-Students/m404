@@ -1,5 +1,6 @@
 package roman;
 
+import org.jetbrains.annotations.NotNull;
 import scanner.InputReader;
 
 public class RomanNumbers {
@@ -11,12 +12,16 @@ public class RomanNumbers {
         InputReader ir = new InputReader();
         int inp = 0;
         while ( inp >= 0) {
+            System.out.print("Please enter a number between 0 and 4000 > ");
             inp = ir.readInt();
+
+            if (inp < 1 || inp > 3999) continue;
             System.out.println(convert(inp));
         }
     }
 
-    private String convert(int nr) {
+    private @NotNull
+    String convert(int nr) {
         StringBuilder roman = new StringBuilder();
         String numberStr = "" + nr;
 
@@ -27,7 +32,7 @@ public class RomanNumbers {
         return roman.toString();
     }
 
-    private String convertNumber(int nr) {
+    String convertNumber(int nr) {
         StringBuilder numeral = new StringBuilder();
 //        System.out.println("Now converting... " + nr);
 

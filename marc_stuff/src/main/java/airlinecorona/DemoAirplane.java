@@ -64,6 +64,10 @@ public class DemoAirplane {
         positions.add(new Integer[]{row + 1, seat});
         positions.add(new Integer[]{row, seat - 1});
         positions.add(new Integer[]{row, seat + 1});
+        positions.add(new Integer[]{row + 1, seat + 1});
+        positions.add(new Integer[]{row - 1, seat + 1});
+        positions.add(new Integer[]{row + 1, seat - 1});
+        positions.add(new Integer[]{row - 1, seat - 1});
 
         for (Integer[] i : positions) {
             try {

@@ -1,6 +1,5 @@
 package uriRechner;
 
-import scanner.Einleser;
 
 public class Rechner {
     public static void main(String[] args) {
@@ -8,7 +7,7 @@ public class Rechner {
     }
 
     public void run(){
-        Einleser e = new Einleser();
+        UriEinleser e = new UriEinleser();
         URI uri = new URI();
         String inputU;
         String inputI;

@@ -1,0 +1,63 @@
+package roman;
+
+import scanner.InputReader;
+
+public class RomanNumbers {
+    public static void main(String[] args) {
+        new RomanNumbers().run();
+    }
+
+    private void run() {
+        InputReader ir = new InputReader();
+        int inp = 0;
+        while ( inp >= 0) {
+            inp = ir.readInt();
+            System.out.println(convert(inp));
+        }
+    }
+
+    private String convert(int nr) {
+        StringBuilder roman = new StringBuilder();
+        String numberStr = "" + nr;
+
+        for (int i = 0; i < numberStr.length(); i++) {
+            roman.append(convertNumber(Integer.parseInt("" + numberStr.charAt(i) + "0".repeat(Math.max(0, numberStr.length() - 1 - i)))));
+        }
+
+        return roman.toString();
+    }
+
+    private String convertNumber(int nr) {
+        StringBuilder numeral = new StringBuilder();
+//        System.out.println("Now converting... " + nr);
+
+        int tempNr = nr;
+        for (RomanLetter l : RomanLetter.values()) {
+            while (tempNr - l.getValue() >= 0) {
+                tempNr -= l.getValue();
+                numeral.append(l.name());
+                System.out.println(nr + " currently " + numeral);
+                checkForAbbr(numeral, l);
+            }
+        }
+
+//        System.out.println("Converted _" + nr + " to " + numeral);
+
+        return numeral.toString();
+    }
+
+    private void checkForAbbr(StringBuilder roman, RomanLetter l) {
+        String check = (roman.length() >= 4) ? roman.substring(roman.length() - 4) : "";
+        if (check.equals(l.name().repeat(4))) {
+            roman.replace(roman.length() - 4, roman.length(), l.name() + l.getPrevious().name());
+//            System.out.println("replaced _" + check + " with" + l.name() + l.getPrevious().name());
+        }
+
+        check = (roman.length() >= 3) ? roman.substring(roman.length() - 3) : "";
+        System.out.println("Check3 ... " + check);
+        if (l.ordinal() <= 1) return;
+        if (check.equals(l.getPrevious().name() + l.name() + l.getPrevious().name())) {
+            roman.replace(roman.length() - 3, roman.length(), l.name() + l.getPrevious().getPrevious().name());
+        }
+    }
+}

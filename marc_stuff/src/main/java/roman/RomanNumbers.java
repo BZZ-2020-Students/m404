@@ -11,12 +11,15 @@ public class RomanNumbers {
         InputReader ir = new InputReader();
         int inp = 0;
         while ( inp >= 0) {
+            System.out.print("Please enter a number between 0 and 4000 > ");
             inp = ir.readInt();
+
+            if (inp < 1 || inp > 3999) continue;
             System.out.println(convert(inp));
         }
     }
 
-    private String convert(int nr) {
+    String convert(int nr) {
         StringBuilder roman = new StringBuilder();
         String numberStr = "" + nr;
 
@@ -27,9 +30,9 @@ public class RomanNumbers {
         return roman.toString();
     }
 
-    private String convertNumber(int nr) {
+    String convertNumber(int nr) {
         StringBuilder numeral = new StringBuilder();
-//        System.out.println("Now converting... " + nr);
+        System.out.println("\n\nNow converting... " + nr);
 
         int tempNr = nr;
         for (RomanLetter l : RomanLetter.values()) {
@@ -41,7 +44,7 @@ public class RomanNumbers {
             }
         }
 
-//        System.out.println("Converted _" + nr + " to " + numeral);
+        System.out.println("Converted _" + nr + " to " + numeral);
 
         return numeral.toString();
     }
@@ -50,14 +53,15 @@ public class RomanNumbers {
         String check = (roman.length() >= 4) ? roman.substring(roman.length() - 4) : "";
         if (check.equals(l.name().repeat(4))) {
             roman.replace(roman.length() - 4, roman.length(), l.name() + l.getPrevious().name());
-//            System.out.println("replaced _" + check + " with" + l.name() + l.getPrevious().name());
+            System.out.println("replaced _" + check + " with" + l.name() + l.getPrevious().name());
         }
 
         check = (roman.length() >= 3) ? roman.substring(roman.length() - 3) : "";
-        System.out.println("Check3 ... " + check);
         if (l.ordinal() <= 1) return;
         if (check.equals(l.getPrevious().name() + l.name() + l.getPrevious().name())) {
-            roman.replace(roman.length() - 3, roman.length(), l.name() + l.getPrevious().getPrevious().name());
+            String prev = l.name() + l.getPrevious().getPrevious().name();
+            roman.replace(roman.length() - 3, roman.length(), l.name() + prev);
+            System.out.println("replaced _" + check + " with" + l.name() + prev);
         }
     }
 }

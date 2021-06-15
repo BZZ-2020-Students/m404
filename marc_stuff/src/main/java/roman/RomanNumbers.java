@@ -1,6 +1,5 @@
 package roman;
 
-import org.jetbrains.annotations.NotNull;
 import scanner.InputReader;
 
 public class RomanNumbers {
@@ -20,7 +19,6 @@ public class RomanNumbers {
         }
     }
 
-    private @NotNull
     String convert(int nr) {
         StringBuilder roman = new StringBuilder();
         String numberStr = "" + nr;
@@ -34,7 +32,7 @@ public class RomanNumbers {
 
     String convertNumber(int nr) {
         StringBuilder numeral = new StringBuilder();
-//        System.out.println("Now converting... " + nr);
+        System.out.println("\n\nNow converting... " + nr);
 
         int tempNr = nr;
         for (RomanLetter l : RomanLetter.values()) {
@@ -46,7 +44,7 @@ public class RomanNumbers {
             }
         }
 
-//        System.out.println("Converted _" + nr + " to " + numeral);
+        System.out.println("Converted _" + nr + " to " + numeral);
 
         return numeral.toString();
     }
@@ -55,14 +53,15 @@ public class RomanNumbers {
         String check = (roman.length() >= 4) ? roman.substring(roman.length() - 4) : "";
         if (check.equals(l.name().repeat(4))) {
             roman.replace(roman.length() - 4, roman.length(), l.name() + l.getPrevious().name());
-//            System.out.println("replaced _" + check + " with" + l.name() + l.getPrevious().name());
+            System.out.println("replaced _" + check + " with" + l.name() + l.getPrevious().name());
         }
 
         check = (roman.length() >= 3) ? roman.substring(roman.length() - 3) : "";
-        System.out.println("Check3 ... " + check);
         if (l.ordinal() <= 1) return;
         if (check.equals(l.getPrevious().name() + l.name() + l.getPrevious().name())) {
-            roman.replace(roman.length() - 3, roman.length(), l.name() + l.getPrevious().getPrevious().name());
+            String prev = l.name() + l.getPrevious().getPrevious().name();
+            roman.replace(roman.length() - 3, roman.length(), l.name() + prev);
+            System.out.println("replaced _" + check + " with" + l.name() + prev);
         }
     }
 }

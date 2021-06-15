@@ -8,31 +8,45 @@ public class NumeralsDemo {
         new NumeralsDemo().run();
     }
 
-    public void run(){
-        Scanner sc= new Scanner(System.in);
+    public void run() {
+        Scanner sc = new Scanner(System.in);
 
-        String numerals = "";
-        String[] symbols = {"M", "D", "C", "L", "X", "V", "I"};
-        int[] numbers = {1000, 500, 100, 50, 10, 5, 1};
-        int input;
-        int nr = 0;
-        int index = 0;
+        String again = "yes";
 
 
-        System.out.print("Enter a number >");
-        input = sc.nextInt();
+        while (again.equals("yes")) {
+            String numerals = "";
+            String[] symbols = {"M", "D", "C", "L", "X", "V", "I"};
+            int[] numbers = {1000, 500, 100, 50, 10, 5, 1};
+            int input;
+            int nr = 0;
+            int index = 0;
 
-        nr += input;
-        do{
-            if(nr >= numbers[index]){
-                numerals += symbols[index];
-                nr = nr - numbers[index];
+            System.out.print("Enter a number (1-9999)> ");
+            input = sc.nextInt();
+
+            if(input < 1|| input > 9999){
+                System.out.println("Out of bounds!");
             }else{
-                index++;
-            }
-        }while(nr > 0);
+                nr += input;
+                do {
+                    if (nr >= numbers[index]) {
+                        numerals += symbols[index];
+                        nr = nr - numbers[index];
+                    } else {
+                        index++;
+                    }
+                } while (nr > 0);
 
-        System.out.println("Roman numerals to "+ input + " are: " + numerals);
+                System.out.println("Roman numerals to " + input + " are: " + numerals);
+                System.out.println("----------------------------");
+                System.out.print("Would you like to convert another number? [yes/no] > ");
+                sc.nextLine();
+                again = sc.nextLine();
+            }
+
+
+        }
     }
 
 }

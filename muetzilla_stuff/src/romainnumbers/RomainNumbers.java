@@ -5,7 +5,7 @@ import scanner.Scan;
 
 public class RomainNumbers {
     Scan scanner;
-    String[] romainNumbers = {"I", "V", "X", "L", "C", "D", "M", "ↁ", "ↁ", "ↇ", "ↈ"};
+    String[] romainNumbers = {"I", "V", "X", "L", "C", "D", "M"};
 
     public RomainNumbers() {
         scanner = new Scan();
@@ -29,6 +29,7 @@ public class RomainNumbers {
         StringBuilder romanNumber = new StringBuilder();
         for (int i = 0; i < arabicNumberInput; i++) {
             romanNumber.append("I");
+            System.out.println(romainNumbers[i]);
         }
         return romanNumber.toString();
     }

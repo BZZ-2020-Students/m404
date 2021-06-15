@@ -79,4 +79,5 @@ public class Konto {
     public void setFranken(double franken) {
         this.franken = franken;
     }
+
 }

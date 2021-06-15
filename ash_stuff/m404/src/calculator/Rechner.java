@@ -1,13 +1,13 @@
 package calculator;
 
-import scanner.Einleser;
+
 
 public class Rechner {
     public static void main(String[] args) {
         new Rechner().run();
     }
     public void run(){
-        Einleser el = new Einleser();
+        calcEinleser el = new calcEinleser();
         Calculus c = new Calculus();
 
         System.out.println("-------------Calculator-------------");

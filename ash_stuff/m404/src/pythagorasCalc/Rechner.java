@@ -1,6 +1,6 @@
 package pythagorasCalc;
 
-import scanner.Einleser;
+
 
 public class Rechner {
     public static void main(String[] args) {
@@ -8,7 +8,7 @@ public class Rechner {
     }
 
     public void run(){
-        Einleser e = new Einleser();
+        pythEinleser e = new pythEinleser();
         Pythagoras pyth = new Pythagoras();
         String inputA;
         String inputB;

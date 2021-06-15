@@ -1,5 +1,5 @@
 package numerals;
-import scanner.Einleser;
+
 
 public class NumeralsDemo {
     public static void main(String[] args) {
@@ -7,6 +7,7 @@ public class NumeralsDemo {
     }
 
     public void run(){
-        Einleser e = new Einleser();
+        numEinleser e = new numEinleser();
+        e.readString();
     }
 }

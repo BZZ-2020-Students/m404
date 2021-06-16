@@ -18,15 +18,17 @@ public class NumeralsDemo {
             String numerals = "";
             String[] symbols = {"M", "D", "C", "L", "X", "V", "I"};
             int[] numbers = {1000, 500, 100, 50, 10, 5, 1};
-            int input;
+            double input;
             int nr = 0;
             int index = 0;
 
             System.out.print("Enter a number (1-9999)> ");
-            input = sc.nextInt();
+            input = sc.nextDouble();
 
             if(input < 1|| input > 9999){
                 System.out.println("Out of bounds!");
+            }else if(input != (int)input){
+                System.out.println("Enter a natural number!");
             }else{
                 nr += input;
                 do {
@@ -38,7 +40,7 @@ public class NumeralsDemo {
                     }
                 } while (nr > 0);
 
-                System.out.println("Roman numerals to " + input + " are: " + numerals);
+                System.out.println("Roman numerals to " + (int)input + " are: " + numerals);
                 System.out.println("----------------------------");
                 System.out.print("Would you like to convert another number? [yes/no] > ");
                 sc.nextLine();

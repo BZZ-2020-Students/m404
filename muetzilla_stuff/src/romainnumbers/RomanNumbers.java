@@ -3,16 +3,16 @@ package romainnumbers;
 
 import scanner.Scan;
 
-public class RomainNumbers {
+public class RomanNumbers {
     Scan scanner;
     String[] romainNumbers = {"I", "V", "X", "L", "C", "D", "M"};
 
-    public RomainNumbers() {
+    public RomanNumbers() {
         scanner = new Scan();
     }
 
     public static void main(String[] args) {
-        RomainNumbers roNu = new RomainNumbers();
+        RomanNumbers roNu = new RomanNumbers();
         roNu.run();
     }
 

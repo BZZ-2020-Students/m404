@@ -10,7 +10,7 @@ public class RomanNumbers {
     private void run() {
         InputReader ir = new InputReader();
         int inp = 0;
-        while ( inp >= 0) {
+        while (inp >= 0) {
             System.out.print("Please enter a number between 0 and 4000 > ");
             inp = ir.readInt();
 
@@ -47,7 +47,6 @@ public class RomanNumbers {
         }
 
         System.out.println("Converted _" + nr + " to " + numeral);
-
         return numeral.toString();
     }
 

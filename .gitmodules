@@ -1,0 +1,3 @@
+[submodule "tim_stuff/GameManager"]
+	path = tim_stuff/GameManager
+	url = https://github.com/zwazel/GameManager

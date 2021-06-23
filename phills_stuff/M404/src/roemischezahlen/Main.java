@@ -6,7 +6,7 @@ public class Main {
     static Scanner scanner;
     Einleser einleser;
 
-    public Main(){
+    public Main() {
         scanner = new Scanner(System.in);
     }
 
@@ -16,16 +16,15 @@ public class Main {
         demo.run();
     }
 
-    public void run(){
+    public void run() {
         einleser = new Einleser();
         System.out.println("Ganzzahl: ");
         int zahl = einleser.readInt();
-        if(zahl > 9999 || zahl < 1) {
+        if (zahl > 9999 || zahl < 1) {
             System.out.println("Die Zahl muss zwischen 1 - 9999 liegen");
-        }else{
+        } else {
             System.out.println("Die Römische Zahl von " + zahl + " ist: " + umwandeln(zahl));
         }
-
 
 
     }
@@ -33,8 +32,8 @@ public class Main {
     private static String umwandeln(int zahl) {
         String roemisch = "";
 
-        int[] werte = { 1000, 500, 100, 50, 10, 5, 1 };
-        char[] zeichen = { 'M', 'D', 'C', 'L', 'X', 'V', 'I' };
+        int[] werte = {1000, 500, 100, 50, 10, 5, 1};
+        char[] zeichen = {'M', 'D', 'C', 'L', 'X', 'V', 'I'};
 
         int index = 0;
         while (zahl > 0) {

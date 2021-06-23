@@ -75,7 +75,7 @@ public class Main {
         int endX = (sitzplatz + 1) < (anzsitze) ? sitzplatz : sitzplatz + 1;
         int endY = (reihe + 1) < (anzreihen) ? reihe : reihe + 1;
 
-        System.out.println("Start{X:"+startX+",Y:"+startY+"},\nEnd{X:"+endX + ",Y:"+endY+"}");
+        System.out.println("Start{X:" + startX + ",Y:" + startY + "},\nEnd{X:" + endX + ",Y:" + endY + "}");
 
         for (int y = startY; y < endY; y++) {
             for (int x = startX; x < endX; x++) {

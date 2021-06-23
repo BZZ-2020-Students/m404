@@ -19,8 +19,7 @@ public class Main {
     /**
      * starts the execution
      *
-     * @param args
-     *            command line arguments
+     * @param args command line arguments
      */
     public static void main(String[] args) {
         Main program = new Main();
@@ -47,13 +46,13 @@ public class Main {
         System.out.print("Seite c: = >");
         c = einlesen.readString();
 
-        if(a.equals("?")){
-            berechnung.berechnena(b,c);
-        }else if (b.equals("?")){
-            berechnung.berechnenb(a,c);
-        }else if (c.equals("?")){
-            berechnung.berechnenc(a,b);
-        }else{
+        if (a.equals("?")) {
+            berechnung.berechnena(b, c);
+        } else if (b.equals("?")) {
+            berechnung.berechnenb(a, c);
+        } else if (c.equals("?")) {
+            berechnung.berechnenc(a, b);
+        } else {
             System.out.println("Sie müssen ein ? platzieren");
         }
     }

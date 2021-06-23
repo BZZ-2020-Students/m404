@@ -6,10 +6,10 @@ import java.util.Scanner;
  * practice using reference variables
  *
  * @author Marcel Suter
- * @since 2018-05-14
  * @version 1.0
+ * @since 2018-05-14
  */
-public class RefVar{
+public class RefVar {
 
     /**
      * constructor: initialize attributes
@@ -20,8 +20,7 @@ public class RefVar{
     /**
      * starts the execution
      *
-     * @param args
-     *            command line arguments
+     * @param args command line arguments
      */
     public static void main(String[] args) {
         RefVar program = new RefVar();
@@ -32,27 +31,27 @@ public class RefVar{
      * declare and use some reference variables and objects
      */
     private void run() {
-        Integer zahl1,zahl2,zahl3;
+        Integer zahl1, zahl2, zahl3;
 
         zahl1 = new Integer(1);
-        zahl2  = new Integer(1);
+        zahl2 = new Integer(1);
         zahl3 = zahl1;
-        if (zahl1.intValue()== zahl2.intValue()){
+        if (zahl1.intValue() == zahl2.intValue()) {
             System.out.println("gleich");
 
-        } else{
+        } else {
             System.out.println("ungleich");
         }
 
-        if(zahl1 == zahl2){
+        if (zahl1 == zahl2) {
             System.out.println("gleich");
-        }else{
+        } else {
             System.out.println("ungleich");
         }
 
-        if(zahl1 == zahl3){
+        if (zahl1 == zahl3) {
             System.out.println("gleich");
-        }else{
+        } else {
             System.out.println("ungleich");
         }
     }

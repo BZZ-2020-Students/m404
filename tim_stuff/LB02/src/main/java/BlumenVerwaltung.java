@@ -31,7 +31,7 @@ public class BlumenVerwaltung {
 
                 case PRINT_INFOS:
                     System.out.println("Es werden " + blumen.length + " Blumen angezeigt...");
-                    for(int i = 0;  i < idCounter; i++) {
+                    for (int i = 0; i < idCounter; i++) {
                         System.out.println(blumen[i]);
                     }
                     System.out.println();

@@ -4,7 +4,7 @@ public class BlumenVerwaltung {
     private final int maxBlumen;
     private ArrayList<Blume> blumen = new ArrayList<>();
     private int idCounter = 1;
-    private Einleser scanner = new Einleser();
+    private final Einleser scanner = new Einleser();
 
     public BlumenVerwaltung(int maxBlumen) {
         this.maxBlumen = maxBlumen;

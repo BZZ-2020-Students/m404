@@ -5,9 +5,9 @@ public class Person {
     private String nachname;
     private int alter;
 
-    public Person(String vorname,String nachname,int alter){
+    public Person(String vorname, String nachname, int alter) {
         this.vorname = vorname;
-        this.nachname= nachname;
+        this.nachname = nachname;
         this.alter = alter;
     }
 
@@ -15,23 +15,23 @@ public class Person {
 //        return vorname;
 //    }
 
-    public void setVorname(String vorname){
+    public void setVorname(String vorname) {
         this.vorname = vorname;
     }
 
-    public String getNachname(){
+    public String getNachname() {
         return nachname;
     }
 
-    public void setNachname(String nachname){
+    public void setNachname(String nachname) {
         this.nachname = nachname;
     }
 
-    public int getAlter(){
+    public int getAlter() {
         return alter;
     }
 
-    public void setAlter(int alter){
+    public void setAlter(int alter) {
         this.alter = alter;
 
     }

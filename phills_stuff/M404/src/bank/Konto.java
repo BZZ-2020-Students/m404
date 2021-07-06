@@ -11,22 +11,22 @@ public class Konto {
         this.pin = pin;
     }
 
-    public void ausgeben(){
-        System.out.println("Besitzer: "+ besitzer+"\nKontostand: "+ kontostand + "\nPIN: "+ pin );
+    public void ausgeben() {
+        System.out.println("Besitzer: " + besitzer + "\nKontostand: " + kontostand + "\nPIN: " + pin);
 
     }
 
-    public void einzahlen(double betrag){
+    public void einzahlen(double betrag) {
 
 
         kontostand += betrag;
     }
 
-    public void abheben(double betrag){
+    public void abheben(double betrag) {
         double mindestwert = kontostand -= betrag;
-        if(mindestwert <= 0){
+        if (mindestwert <= 0) {
             System.out.println("Sie können nicht soviel abheben weil Sie broke sind:)");
-        }else {
+        } else {
             kontostand -= betrag;
         }
     }

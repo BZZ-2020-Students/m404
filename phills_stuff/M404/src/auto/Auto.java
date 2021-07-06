@@ -21,24 +21,24 @@ public class Auto {
         this.verbrauch100km = verbrauch100km;
     }
 
-    public void ausgeben(){
-        System.out.println("Marke: "+ marke+"\nModell: "+ modell + "\nLeistung: "+ leistung + "\nVerbrauch auf 100km: "+ verbrauch100km +"\nFarbe: "+farbe+ "\nKraftstoffmenge: " + kraftstoffmenge + "\nKennzeichen: " + kennzeichen);
+    public void ausgeben() {
+        System.out.println("Marke: " + marke + "\nModell: " + modell + "\nLeistung: " + leistung + "\nVerbrauch auf 100km: " + verbrauch100km + "\nFarbe: " + farbe + "\nKraftstoffmenge: " + kraftstoffmenge + "\nKennzeichen: " + kennzeichen);
     }
 
-    public void fahren(){
+    public void fahren() {
 
 
         double restkraftstoffmenge = kraftstoffmenge -= verbrauch100km;
-        if(restkraftstoffmenge <= 0){
+        if (restkraftstoffmenge <= 0) {
             System.out.println("Ihr Fahrzeug hat einen Leeren Tank Sie können nicht weiterfahren");
 
-        }else {
-            System.out.println("Sie fahren mit ihrem " + modell +" 100 km, Sie haben 10 L verbraucht");
+        } else {
+            System.out.println("Sie fahren mit ihrem " + modell + " 100 km, Sie haben 10 L verbraucht");
             kraftstoffmenge -= verbrauch100km;
         }
     }
 
-    public void tanken(){
+    public void tanken() {
         System.out.println("Sie betanken ihren " + modell + " mit 10 l");
         kraftstoffmenge += 10;
     }
@@ -90,6 +90,7 @@ public class Auto {
     public void setModell(String modell) {
         this.modell = modell;
     }
+
     public double getVerbrauch100km() {
         return verbrauch100km;
     }

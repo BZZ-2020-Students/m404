@@ -6,12 +6,12 @@ public class Einleser {
     static Scanner scanner;
 
 
-    public Einleser(){
+    public Einleser() {
         scanner = new Scanner(System.in);
     }
 
-    public double readDouble(){
-        while (!scanner.hasNextDouble()){
+    public double readDouble() {
+        while (!scanner.hasNextDouble()) {
             System.out.println("Bitte eine Zahl eingeben!");
             scanner.next();
         }
@@ -19,8 +19,8 @@ public class Einleser {
         return zahl;
     }
 
-    public int readInt(){
-        while (!scanner.hasNextInt()){
+    public int readInt() {
+        while (!scanner.hasNextInt()) {
             System.out.println("Bitte eine Zahl eingeben!");
             scanner.next();
         }
@@ -28,8 +28,8 @@ public class Einleser {
         return zahl;
     }
 
-    public boolean readBoolean(){
-        while (!scanner.hasNextBoolean()){
+    public boolean readBoolean() {
+        while (!scanner.hasNextBoolean()) {
             System.out.println("Bitte eine Zahl eingeben!");
             scanner.next();
         }
@@ -37,8 +37,8 @@ public class Einleser {
         return zahl;
     }
 
-    public String readString(){
-        while (!scanner.hasNextLine()){
+    public String readString() {
+        while (!scanner.hasNextLine()) {
             System.out.println("Bitte eine Zahl eingeben!");
             scanner.next();
         }
@@ -46,7 +46,7 @@ public class Einleser {
         return zahl;
     }
 
-    public String returnString(String grund){
+    public String returnString(String grund) {
         System.out.println(grund);
         return readString();
     }

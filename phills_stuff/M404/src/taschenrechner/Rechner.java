@@ -19,7 +19,7 @@ public class Rechner {
         rechner.run();
     }
 
-    public void run(){
+    public void run() {
 
         calc = new Calculus();
         einlesen = new Einleser();
@@ -29,16 +29,16 @@ public class Rechner {
 
         operator = einlesen.readString();
         boolean falscheeingabe = false;
-        do{
+        do {
             if (operator.equals("+") || operator.equals("-") || operator.equals("*") || operator.equals("/")) {
 
                 falscheeingabe = false;
-            }else{
+            } else {
                 System.out.println("Geben Sie einen der oben gewählten Operatoren: ");
                 operator = einlesen.readString();
                 falscheeingabe = true;
             }
-        }while(falscheeingabe);
+        } while (falscheeingabe);
 
         System.out.println("Geben Sie die erste Zahl ein: ");
         zahl1 = einlesen.readDouble();
@@ -48,16 +48,16 @@ public class Rechner {
 
         switch (operator) {
             case "+":
-                calc.plus(zahl1,zahl2);
+                calc.plus(zahl1, zahl2);
                 break;
             case "-":
-                calc.minus(zahl1,zahl2);
+                calc.minus(zahl1, zahl2);
                 break;
             case "*":
-                calc.mal(zahl1,zahl2);
+                calc.mal(zahl1, zahl2);
                 break;
             case "/":
-                calc.durch(zahl1,zahl2);
+                calc.durch(zahl1, zahl2);
                 break;
         }
 

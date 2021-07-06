@@ -6,8 +6,8 @@ import java.util.Scanner;
  * short description of this program
  *
  * @author Ibid umm
- * @since yyyy-mm-dd
  * @version 1.0
+ * @since yyyy-mm-dd
  */
 public class Briefanrede {
 
@@ -24,8 +24,7 @@ public class Briefanrede {
     /**
      * starts the execution
      *
-     * @param args
-     *            command line arguments
+     * @param args command line arguments
      */
     public static void main(String[] args) {
         Briefanrede program = new Briefanrede();
@@ -43,10 +42,10 @@ public class Briefanrede {
 
         System.out.println("Gebem Sie ihre Anrede ein: ");
         anrede = scanner.nextLine();
-        if(anrede.equals("Herr") || anrede.equals("Frau")){
+        if (anrede.equals("Herr") || anrede.equals("Frau")) {
             System.out.println("Geben Sie ihren Nachnamen ein: ");
             nachname = scanner.nextLine();
-        }else{
+        } else {
             System.out.println("Geben Sie ihren Firmennamen ein: ");
             firmenname = scanner.nextLine();
         }

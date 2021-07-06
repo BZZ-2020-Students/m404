@@ -6,13 +6,13 @@ public class demo {
         demo.run();
     }
 
-    public void run(){
+    public void run() {
         String[] namen = new String[5];
 
-        for (int i = 0;i < namen.length; i++){
-            namen[i] = "hallo"+i;
+        for (int i = 0; i < namen.length; i++) {
+            namen[i] = "hallo" + i;
         }
-        for(int i = 0; i< namen.length;i++){
+        for (int i = 0; i < namen.length; i++) {
             System.out.println(namen[i]);
         }
 

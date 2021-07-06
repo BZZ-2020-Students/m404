@@ -8,41 +8,40 @@ public class Fach {
     private int schuljahr;
 
 
-
-    public Fach(Note[] noten,String name, int semester, int schuljahr) {
+    public Fach(Note[] noten, String name, int semester, int schuljahr) {
         this.noten = noten;
         this.name = name;
         this.semester = semester;
         this.schuljahr = schuljahr;
     }
 
-    public Fach(){
+    public Fach() {
 
     }
 
 
-    public void addNote(Note note){
+    public void addNote(Note note) {
 
     }
 
     public void printNoten() {
         for (int i = 0; i < noten.length; i++) {
-            System.out.println("Note: "+noten[i].getWert() + "\nGewichtung: " + noten[i].getGewichtung() + "\nDatum: " + noten[i].getDatum());
+            System.out.println("Note: " + noten[i].getWert() + "\nGewichtung: " + noten[i].getGewichtung() + "\nDatum: " + noten[i].getDatum());
         }
         durchschnitt();
     }
 
-    public void durchschnitt(){
+    public void durchschnitt() {
         double zwischenresultat = 0;
         double durchschnitt = 0;
         double gewichtung = 0;
         for (int i = 0; i < noten.length; i++) {
-            double resultat = noten[i].getWert()* noten[i].getGewichtung();
+            double resultat = noten[i].getWert() * noten[i].getGewichtung();
             zwischenresultat += resultat;
             gewichtung += noten[i].getGewichtung() * 2;
         }
-        durchschnitt = zwischenresultat / gewichtung * 2 ;
-        System.out.println("Durchschnitt: "+ durchschnitt);
+        durchschnitt = zwischenresultat / gewichtung * 2;
+        System.out.println("Durchschnitt: " + durchschnitt);
     }
 
     public void setNoten(Note[] noten) {

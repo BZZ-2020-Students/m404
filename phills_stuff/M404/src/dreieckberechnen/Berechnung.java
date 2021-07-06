@@ -7,8 +7,8 @@ public class Berechnung {
         double b = Double.parseDouble(Sb);
         double c = Double.parseDouble(Sc);
 
-        b = b*b;
-        c = c*c;
+        b = b * b;
+        c = c * c;
         zresultat = c - b;
         resultat = Math.sqrt(zresultat);
         System.out.println("Seite a ist " + resultat + " lang.");
@@ -22,8 +22,8 @@ public class Berechnung {
         double a = Double.parseDouble(Sa);
         double c = Double.parseDouble(Sc);
 
-        a = a*a;
-        c = c*c;
+        a = a * a;
+        c = c * c;
         zresultat = c - a;
         resultat = Math.sqrt(zresultat);
         System.out.println("Seite b ist " + resultat + " lang.");
@@ -34,9 +34,9 @@ public class Berechnung {
         double zresultat;
         double a = Double.parseDouble(Sa);
         double b = Double.parseDouble(Sb);
-        a = a*a;
-        b = b*b;
-        zresultat = a+b;
+        a = a * a;
+        b = b * b;
+        zresultat = a + b;
         resultat = Math.sqrt(zresultat);
         System.out.println("Seite c ist " + resultat + " lang.");
 

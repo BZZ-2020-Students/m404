@@ -8,7 +8,7 @@ public class Schueler {
     private String geburtstag;
     private String geschlecht;
 
-    public Schueler(){
+    public Schueler() {
 
     }
 
@@ -20,17 +20,16 @@ public class Schueler {
         this.geschlecht = geschlecht;
     }
 
-    public void addFach(Fach fach){
+    public void addFach(Fach fach) {
 
     }
 
-    public void printFaecher(){
+    public void printFaecher() {
         for (int i = 0; i < faecher.length; i++) {
             System.out.println("-------------------------------------------------");
             System.out.println("Fach: " + faecher[i].getName());
             faecher[i].printNoten();
         }
-
 
 
     }

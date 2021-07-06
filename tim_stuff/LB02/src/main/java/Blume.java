@@ -1,14 +1,16 @@
 public class Blume {
+    private final int id;
     private final String name;
     private final double preis;
     private final String farbe;
-    private final String urpsrungslang;
+    private final String urpsrungsland;
 
-    public Blume(String name, double preis, String farbe, String urpsrungslang) {
+    public Blume(int id, String name, double preis, String farbe, String urpsrungsland) {
+        this.id = id;
         this.name = name;
         this.preis = preis;
         this.farbe = farbe;
-        this.urpsrungslang = urpsrungslang;
+        this.urpsrungsland = urpsrungsland;
     }
 
     public String getName() {
@@ -23,17 +25,12 @@ public class Blume {
         return farbe;
     }
 
-    public String getUrpsrungslang() {
-        return urpsrungslang;
+    public String getUrpsrungsland() {
+        return urpsrungsland;
     }
 
     @Override
     public String toString() {
-        return "Blume{" +
-                "name='" + name + '\'' +
-                ", preis=" + preis +
-                ", farbe='" + farbe + '\'' +
-                ", urpsrungslang='" + urpsrungslang + '\'' +
-                '}';
+        return id + ". Blume: " + name + ", " + farbe + ", " + urpsrungsland + ", " + preis + "Fr.";
     }
 }

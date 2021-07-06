@@ -17,25 +17,8 @@ public class Einleser {
             System.out.println("Bitte eine Zahl eingeben!");
             scanner.next();
         }
-        return scanner.nextDouble();
-    }
-
-    public int readInt() {
-        while (!scanner.hasNextInt()) {
-            System.out.println("Bitte eine Zahl eingeben!");
-            scanner.next();
-        }
-        return scanner.nextInt();
-    }
-
-    public boolean readBoolean() {
-        while (!scanner.hasNextBoolean()) {
-            System.out.println("Bitte \"true\" oder \"false\" eingeben!");
-            scanner.next();
-        }
-        boolean out = scanner.nextBoolean();
-        scanner.nextLine();
-        return out;
+        String doubleString = scanner.nextLine();
+        return Double.parseDouble(doubleString);
     }
 
     public char readChar() {
@@ -45,22 +28,5 @@ public class Einleser {
             ch = scanner.nextLine().charAt(0);
         }
         return ch;
-    }
-
-    public LocalDate readDate() {
-        int year;
-        int month;
-        int day;
-
-        System.out.println("Bitte das Jahr angeben: ");
-        year = readInt();
-
-        System.out.println("Bitte den Monat angeben: ");
-        month = readInt();
-
-        System.out.println("Bitte den Tag angeben: ");
-        day = readInt();
-
-        return LocalDate.of(year, month, day);
     }
 }

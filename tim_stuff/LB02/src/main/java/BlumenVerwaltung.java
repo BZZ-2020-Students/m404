@@ -1,13 +1,12 @@
 import java.util.ArrayList;
 
 public class BlumenVerwaltung {
-    private final int maxBlumen;
-    private ArrayList<Blume> blumen = new ArrayList<>();
+    private Blume[] blumen;
     private int idCounter = 1;
     private final Einleser scanner = new Einleser();
 
     public BlumenVerwaltung(int maxBlumen) {
-        this.maxBlumen = maxBlumen;
+        blumen = new Blume[maxBlumen];
         run();
     }
 
@@ -31,8 +30,8 @@ public class BlumenVerwaltung {
                     break;
 
                 case PRINT_INFOS:
-                    System.out.println("Es werden " + blumen.size() + " Blumen angezeigt...");
-                    for(Blume blume : blumen) {
+                    System.out.println("Es werden " + blumen.length + " Blumen angezeigt...");
+                    for (Blume blume : blumen) {
                         System.out.println(blume);
                     }
                     System.out.println();
@@ -69,20 +68,16 @@ public class BlumenVerwaltung {
         System.out.print("Ursprungsland der Blume > ");
         String ursprungsland = scanner.readString();
 
-        blumen.add(new Blume(idCounter++, name, preis, farbe, ursprungsland));
+        blumen[idCounter] = (new Blume(idCounter++, name, preis, farbe, ursprungsland));
         System.out.println("Blume wurde erfolgreich hinzugefügt!");
         System.out.println();
     }
 
-    public int getMaxBlumen() {
-        return maxBlumen;
-    }
-
-    public ArrayList<Blume> getBlumen() {
+    public Blume[] getBlumen() {
         return blumen;
     }
 
-    public void setBlumen(ArrayList<Blume> blumen) {
+    public void setBlumen(Blume[] blumen) {
         this.blumen = blumen;
     }
 }

@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class BlumenVerwaltung {
     private Blume[] blumen;
     private int idCounter = 1;

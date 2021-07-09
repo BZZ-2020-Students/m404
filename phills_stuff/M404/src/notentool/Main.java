@@ -22,8 +22,8 @@ public class Main {
         };
 
         Fach[] faecher = {
-                new Fach(noten, "Deutsch", 2, 2005),
-                new Fach(notenEn, "Englisch", 2, 2005)
+//                new Fach(noten, "Deutsch", 2, 2005),
+//                new Fach(notenEn, "Englisch", 2, 2005)
         };
 
         Note[] notens2 = {
@@ -38,19 +38,19 @@ public class Main {
         };
 
         Fach[] faechers2 = {
-                new Fach(notens2, "Deutsch", 2, 2005),
-                new Fach(notenEns2, "Englisch", 2, 2005)
+//                new Fach(notens2, "Deutsch", 2, 2005),
+//                new Fach(notenEns2, "Englisch", 2, 2005)
         };
 
-        Schueler s1 = new Schueler(faecher, "Mustermann", "Sebastian", "01.02.2007", "Männlich");
-        Schueler s2 = new Schueler(faechers2, "Mustermann", "Max", "01.02.2007", "Männlich");
-
-        System.out.println("Nachname: " + s1.getName() + "\nVorname: " + s1.getVorname() + "\nGeburtstag: " + s1.getGeburtstag());
-        s1.printFaecher();
-        System.out.println("------------------------------------------------------------------");
-        System.out.println("Nachname: " + s2.getName() + "\nVorname: " + s2.getVorname() + "\nGeburtstag: " + s2.getGeburtstag());
-        s2.printFaecher();
-        System.out.println("------------------------------------------------------------------");
+//        Schueler s1 = new Schueler(faecher, "Mustermann", "Sebastian", "01.02.2007", "Männlich");
+//        Schueler s2 = new Schueler(faechers2, "Mustermann", "Max", "01.02.2007", "Männlich");
+//
+//        System.out.println("Nachname: " + s1.getName() + "\nVorname: " + s1.getVorname() + "\nGeburtstag: " + s1.getGeburtstag());
+//        s1.printFaecher();
+//        System.out.println("------------------------------------------------------------------");
+//        System.out.println("Nachname: " + s2.getName() + "\nVorname: " + s2.getVorname() + "\nGeburtstag: " + s2.getGeburtstag());
+//        s2.printFaecher();
+//        System.out.println("------------------------------------------------------------------");
     }
 
 }
